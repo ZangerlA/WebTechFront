@@ -1,20 +1,26 @@
-<div fxLayoutAlign="center center">
-  <mat-card fxFlex="30">
+<div fxLayoutAlign="center center" fxFlexFill>
+  <mat-card fxFlex="30" class="FormContainer">
     <form class="Login-form">
+      <div fxLayout="inline" >
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput>
+        </mat-form-field>
 
-      <mat-form-field appearance="outline">
-        <mat-label>Username</mat-label>
-        <input matInput>
-      </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput type="password">
+        </mat-form-field>
+      </div>
+      <div fxLayoutAlign="center">
+        <button mat-raised-button type="submit" ><!--(click)="tryLogin()"-->Login</button>
+      </div>
 
-      <mat-form-field appearance="outline">
-        <mat-label>Password</mat-label>
-        <input matInput type="password">
-      </mat-form-field>
-
-      <button mat-raised-button type="submit" (click)="tryLogin()">Login</button>
     </form>
 
-    <button mat-raised-button (click)="getRegistration()">Register</button>
+    <div fxLayoutAlign="center">
+      <button mat-raised-button><!--(click)="getRegistration()"-->Register</button>
+    </div>
+
   </mat-card>
 </div>
