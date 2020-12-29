@@ -12,9 +12,9 @@
         <input matInput type="password">
       </mat-form-field>
 
-      <button mat-raised-button type="submit">Login</button>
+      <button mat-raised-button type="submit" (click)="tryLogin()">Login</button>
     </form>
 
-    <button mat-raised-button>Register</button>
+    <button mat-raised-button (click)="getRegistration()">Register</button>
   </mat-card>
 </div>
