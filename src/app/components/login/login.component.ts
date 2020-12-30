@@ -23,7 +23,10 @@ export class LoginComponent implements OnInit {
   }
 
   tryLogin(): void {
-    this.authService.signIn(this.loginForm.value);
+    const val = this.loginForm.value;
+    if (val.username && val.password) {
+      this.authService.signIn(val);
+    }
   }
 }
 

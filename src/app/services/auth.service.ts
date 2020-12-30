@@ -28,25 +28,17 @@ export class AuthService{
     const loginUser = `${this.apiEndpoint}/users/login`;
     return this.http.post<any>(loginUser, user, { headers: this.headers })
       .subscribe((res: any) => {
-        console.log(res);
-        localStorage.setItem('access_token', res.accessToken);
         localStorage.setItem('id', res.id);
         // tslint:disable-next-line:no-shadowed-variable
         this.getUserProfile(res.id).subscribe((res: any) => {
-          console.log(res);
           this.currentUser = res;
           this.router.navigate(['']);
         });
       });
   }
 
-  getToken(): string{
-    return localStorage.getItem('access_token');
-  }
-
-  get isLoggedIn(): boolean {
-    const authToken = localStorage.getItem('access_token');
-    return (authToken !== null);
+  isLoggedIn(): Observable<any> {
+    return this.getUserProfile(localStorage.id);
   }
 
   logout(): void{
