@@ -1,13 +1,13 @@
-<div fxLayoutAlign="center center" fxFlexFill>
+<div fxLayoutAlign="center center" fxFlexFill class="OuterDiv" >
   <mat-card fxFlex="30" class="FormContainer">
-    <form class="Login-form" [formGroup]="loginForm" (ngSubmit)="tryLogin()">
+    <form class="Login-form" [formGroup]="loginForm" (ngSubmit)="tryLogin()" >
       <div fxLayout="inline">
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline" id="usern">
           <mat-label>Username</mat-label>
-          <input matInput formControlName="username" required>
+          <input matInput  formControlName="username" required>
         </mat-form-field>
 
-        <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline" id="passw">
           <mat-label>Password</mat-label>
           <input matInput type="password" formControlName="password" required>
         </mat-form-field>

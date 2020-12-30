@@ -2,4 +2,14 @@ button, mat-form-field{
   margin: 5px;
 }
 
+mat-card{
+  background-color: rgba(41, 41, 41, 0.8);
+}
+
+.OuterDiv{
+  background-image: url("../../../assets/images/tmkl_logos/logogreen.jpg");
+  background-size: contain;
+  background-position: center;
+  z-index: -1;
+}
 
