@@ -1,51 +1,43 @@
-<div class="id">
-  <form class="register">
+<div fxLayoutAlign="center center" fxFlexFill>
+  <mat-card fxFlex="30" class="FormContainer">
+    <form class="Register-form">
+      <div fxLayout="column">
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput type="text">
+        </mat-form-field>
 
-    <div class="row">
-      <div class="col-label">
-        <label for="username">Username</label>
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput type="email">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput type="password">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Confirm Password</mat-label>
+          <input matInput type="password">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Confirmation Code</mat-label>
+          <input matInput type="text">
+        </mat-form-field>
       </div>
-      <div class="col-input">
-        <input type="text" name="username" id="username">
+      <div fxLayoutAlign="center">
+        <button mat-raised-button type="submit" ><!--(click)="tryLogin()"-->Register</button>
       </div>
+
+    </form>
+
+    <div fxLayoutAlign="center">
+      <a routerLink="/">
+        <button mat-raised-button>Back To Login</button>
+      </a>
     </div>
 
-    <div class="row">
-      <div class="col-label">
-        <label for="email">Email</label>
-      </div>
-      <div class="col-input">
-        <input type="email" name="email" id="email">
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-label">
-        <label for="password">Password</label>
-      </div>
-      <div class="col-input">
-        <input type="password" name="password" id="password">
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-label">
-        <label for="passwordRe">Confirm Password</label>
-      </div>
-      <div class="col-input">
-        <input type="password" name="passwordRe" id="passwordRe">
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-label">
-        <label for="code">autofiction code</label>
-      </div>
-      <div class="col-input">
-        <input type="text" name="code" id="code">
-      </div>
-    </div>
-
-
-  </form>
+  </mat-card>
 </div>

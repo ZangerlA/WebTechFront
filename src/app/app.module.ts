@@ -13,9 +13,10 @@ import { MatButtonModule} from '@angular/material/button';
 import { MatCardModule} from '@angular/material/card';
 import { MatIconModule} from '@angular/material/icon';
 
-const routes: Routes = [{
-path: '', component: LoginComponent
-}];
+const routes: Routes = [
+  {path: '', component: LoginComponent},
+  {path: 'register', component: RegisterComponent}
+];
 
 @NgModule({
   declarations: [
