@@ -12,8 +12,13 @@ import { MatInputModule} from '@angular/material/input';
 import { MatButtonModule} from '@angular/material/button';
 import { MatCardModule} from '@angular/material/card';
 import { MatIconModule} from '@angular/material/icon';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {ReactiveFormsModule} from '@angular/forms';
+import { AuthInterceptor } from './services/authconfig.interceptor.service';
+import { AuthGuard } from './services/auth.guard';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+
 
 const routes: Routes = [
     { path: 'login', component: LoginComponent },
@@ -21,6 +26,7 @@ const routes: Routes = [
   ];
 
 
+// @ts-ignore
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +36,7 @@ const routes: Routes = [
     NavbarComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     RouterModule.forRoot(routes),
     FlexLayoutModule,
@@ -38,9 +45,16 @@ const routes: Routes = [
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

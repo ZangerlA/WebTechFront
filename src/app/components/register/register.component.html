@@ -1,6 +1,6 @@
 <div fxLayoutAlign="center center" fxFlexFill>
   <mat-card fxFlex="30" class="FormContainer">
-    <form class="Register-form">
+    <form class="Register-form" [formGroup]="registerForm" (ngSubmit)="tryRegister()">
       <div fxLayout="column">
         <mat-form-field appearance="outline">
           <mat-label>Username</mat-label>
