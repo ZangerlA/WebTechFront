@@ -18,6 +18,8 @@ import { AuthInterceptor } from './services/authconfig.interceptor.service';
 import { AuthGuard } from './services/auth.guard';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { NavbarHeaderComponent } from './components/navbar-header/navbar-header.component';
+import { NavbarBodyComponent } from './components/navbar-body/navbar-body.component';
 
 
 const routes: Routes = [
@@ -34,7 +36,9 @@ const routes: Routes = [
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    NavbarHeaderComponent,
+    NavbarBodyComponent
   ],
   imports: [
     HttpClientModule,
