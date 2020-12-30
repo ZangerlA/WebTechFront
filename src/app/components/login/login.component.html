@@ -1,19 +1,20 @@
 <div fxLayoutAlign="center center" fxFlexFill>
   <mat-card fxFlex="30" class="FormContainer">
-    <form class="Login-form">
-      <div fxLayout="inline" >
+    <form class="Login-form" [formGroup]="loginForm" (ngSubmit)="tryLogin()">
+      <div fxLayout="inline">
         <mat-form-field appearance="outline">
           <mat-label>Username</mat-label>
-          <input matInput>
+          <input matInput formControlName="username" required>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
           <mat-label>Password</mat-label>
-          <input matInput type="password">
+          <input matInput type="password" formControlName="password" required>
         </mat-form-field>
       </div>
+
       <div fxLayoutAlign="center">
-        <button mat-raised-button type="submit" ><!--(click)="tryLogin()"-->Login</button>
+        <button mat-raised-button type="submit">Login</button>
       </div>
 
     </form>

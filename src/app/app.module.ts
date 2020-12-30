@@ -12,9 +12,13 @@ import { MatInputModule} from '@angular/material/input';
 import { MatButtonModule} from '@angular/material/button';
 import { MatCardModule} from '@angular/material/card';
 import { MatIconModule} from '@angular/material/icon';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {ReactiveFormsModule} from '@angular/forms';
+import { AuthInterceptor } from './services/authconfig.interceptor.service';
+import { AuthGuard } from './services/auth.guard';
+
 
 const routes: Routes = [
-
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent }
   ];
@@ -27,6 +31,7 @@ const routes: Routes = [
     RegisterComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     RouterModule.forRoot(routes),
     FlexLayoutModule,
@@ -35,9 +40,16 @@ const routes: Routes = [
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
