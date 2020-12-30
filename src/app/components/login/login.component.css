@@ -7,9 +7,10 @@ mat-card{
 }
 
 .OuterDiv{
-  background-image: url("../../../assets/images/tmkl_logos/logogreen.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../../../assets/images/tmkl_logos/logogreen.jpg");
   background-size: contain;
   background-position: center;
   z-index: -1;
+  display: block;
 }
 
