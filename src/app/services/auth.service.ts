@@ -12,6 +12,7 @@ import {environment} from '../../environments/environment';
 })
 
 export class AuthService{
+
   apiEndpoint = environment.API_URL;
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   currentUser = {};
@@ -19,6 +20,7 @@ export class AuthService{
   constructor(private http: HttpClient, public router: Router) {}
 
   signUp(user: User): Observable<any> {
+    console.log(environment.API_URL);
     const registerUser = `${this.apiEndpoint}/users`;
     return this.http.post(registerUser, user)
       .pipe(
