@@ -3,7 +3,8 @@ button, mat-form-field{
 }
 
 mat-card{
-  background-color: rgba(41, 41, 41, 0.8);
+  background-color: rgba(42, 41, 41, 0.8);
+
 }
 
 * {
