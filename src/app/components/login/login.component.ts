@@ -26,6 +26,8 @@ export class LoginComponent implements OnInit {
     const val = this.loginForm.value;
     if (val.username && val.password) {
       this.authService.signIn(val);
+      this.authService.keepLoggedIn();
+
     }
   }
 }

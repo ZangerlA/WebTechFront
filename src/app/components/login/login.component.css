@@ -6,11 +6,28 @@ mat-card{
   background-color: rgba(41, 41, 41, 0.8);
 }
 
-.OuterDiv{
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+}
+
+.ImageDiv{
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("../../../assets/images/tmkl_logos/logogreen.jpg");
+  filter: blur(2px);
   background-size: contain;
   background-position: center;
   z-index: -1;
-  display: block;
+  height: 1080px;
 }
 
+.OuterDiv{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+
+}

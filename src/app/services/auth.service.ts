@@ -1,18 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Observable, throwError } from 'rxjs';
+import {interval, Observable, throwError, Subscription } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import {User} from '../models/user.model';
+import {environment} from '../../environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthService{
-  apiEndpoint = 'http://localhost:3000';
+  apiEndpoint = environment.API_URL;
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   currentUser = {};
+  subscription: Subscription;
 
   constructor(private http: HttpClient, public router: Router) {}
 
@@ -41,11 +44,15 @@ export class AuthService{
     return this.getUserProfile(localStorage.id);
   }
 
+  keepLoggedIn(): any {
+    const source = interval(60000);
+    const refreshToken = `${this.apiEndpoint}/auth/refresh`;
+    this.subscription = source.subscribe(() => this.http.get(refreshToken, { headers: this.headers }));
+  }
+
   logout(): void{
-    const removeToken = localStorage.removeItem('access_token');
-    if (removeToken == null) {
-      this.router.navigate(['login']);
-    }
+    // TODO destroy cookie in api
+    this.router.navigate(['login']);
   }
 
   // User profile

@@ -21,7 +21,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { NavbarHeaderComponent } from './components/navbar-header/navbar-header.component';
 import { NavbarBodyComponent } from './components/navbar-body/navbar-body.component';
 
-
 const routes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },
