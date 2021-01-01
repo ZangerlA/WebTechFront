@@ -1,4 +1,4 @@
 export const environment = {
    production: false,
-   API_URL: 'https://teamkill.at/api'
+   API_URL: 'http://localhost:3000'
 };
