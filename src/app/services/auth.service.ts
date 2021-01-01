@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {interval, Observable, throwError, Subscription } from 'rxjs';
+import {interval, Observable, throwError} from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -15,7 +15,6 @@ export class AuthService{
   apiEndpoint = environment.API_URL;
   headers = new HttpHeaders().set('Content-Type', 'application/json');
   currentUser = {};
-  subscription: Subscription;
 
   constructor(private http: HttpClient, public router: Router) {}
 
@@ -45,9 +44,8 @@ export class AuthService{
   }
 
   keepLoggedIn(): any {
-    const source = interval(60000);
     const refreshToken = `${this.apiEndpoint}/auth/refresh`;
-    this.subscription = source.subscribe(() => this.http.get(refreshToken, { headers: this.headers }));
+    const refresh = setInterval(() => this.http.get(refreshToken, { headers: this.headers }), 60000);
   }
 
   logout(): void{
