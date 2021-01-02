@@ -1,5 +1,8 @@
 <div fxLayoutAlign="center center" fxFlexFill>
+
   <mat-card fxFlex="30" class="FormContainer">
+    <mat-card-title>Create an account !</mat-card-title>
+    <mat-card-subtitle *ngIf="this.registerError !== ''">{{this.registerError}}</mat-card-subtitle>
     <form class="Register-form" [formGroup]="registerForm" (ngSubmit)="tryRegister()">
       <div fxLayout="column">
         <mat-form-field appearance="outline">

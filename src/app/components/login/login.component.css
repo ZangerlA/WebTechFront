@@ -32,3 +32,12 @@ body, html {
   z-index: 2;
 
 }
+
+mat-card-title{
+  text-align: center;
+}
+
+mat-card-subtitle{
+  padding-top: 1vw;
+  color: red;
+}

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {interval, Observable, throwError} from 'rxjs';
+import {interval, Observable, Subscriber, Subscription, throwError} from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -14,51 +14,44 @@ import {environment} from '../../environments/environment';
 export class AuthService{
 
   apiEndpoint = environment.API_URL;
-  headers = new HttpHeaders().set('Content-Type', 'application/json');
-  currentUser = {};
+  // headers = new HttpHeaders().set('Content-Type', 'application/json');
+  headers = new HttpHeaders();
+  options: {};
 
-  constructor(private http: HttpClient, public router: Router) {}
-
-  signUp(user: User): Observable<any> {
-    console.log(environment.API_URL);
-    const registerUser = `${this.apiEndpoint}/users`;
-    return this.http.post(registerUser, user)
-      .pipe(
-        catchError(this.handleError)
-      );
+  constructor(private http: HttpClient, public router: Router) {
+    this.headers.set('Content-Type', 'application/json');
+    this.options = {
+      headers: this.headers,
+      responseType: 'json',
+      withCredentials: true
+    };
   }
 
-  signIn(user: User): any {
-    const loginUser = `${this.apiEndpoint}/users/login`;
-    return this.http.post<any>(loginUser, user, { headers: this.headers })
-      .subscribe((res: any) => {
-        localStorage.setItem('id', res.id);
-        // tslint:disable-next-line:no-shadowed-variable
-        this.getUserProfile(res.id).subscribe((res: any) => {
-          this.currentUser = res;
-          this.router.navigate(['']);
-        });
-      });
+  signUp(user: User): Observable<any> {
+    const registerUser = `${this.apiEndpoint}/users`;
+    return this.http.post<any>(registerUser, user, this.options);
+  }
+
+  signIn(user: User): Observable<any> {
+    const loginUser = `${this.apiEndpoint}/auth/login`;
+    return this.http.post<any>(loginUser, user, this.options);
   }
 
   isLoggedIn(): Observable<any> {
-    return this.getUserProfile(localStorage.id);
+    const validateSession = `${this.apiEndpoint}/auth/validateSession`;
+    return this.http.get(validateSession, this.options);
   }
 
-  keepLoggedIn(): any {
-    const refreshToken = `${this.apiEndpoint}/auth/refresh`;
-    const refresh = setInterval(() => this.http.get(refreshToken, { headers: this.headers }), 60000);
-  }
-
-  logout(): void{
-    // TODO destroy cookie in api
+  logout(): void {
+    const logoutUser = `${this.apiEndpoint}/auth/logout`;
+    this.http.get(logoutUser, this.options);
     this.router.navigate(['login']);
   }
 
-  // User profile
+  // Get User Data
   getUserProfile(id): Observable<any> {
     const getUser = `${this.apiEndpoint}/users/${id}`;
-    return this.http.get(getUser, { headers: this.headers }).pipe(
+    return this.http.get(getUser, this.options).pipe(
       map((res: Response) => {
         return res || {};
       }),
@@ -67,6 +60,7 @@ export class AuthService{
   }
 
   // Error
+  // TODO keep or no keep ?
   handleError(error: HttpErrorResponse): Observable<never>{
     let msg;
     if (error.error instanceof ErrorEvent) {
@@ -74,7 +68,7 @@ export class AuthService{
       msg = error.error.message;
     } else {
       // server-side error
-      msg = `Error Code: ${error.status}\nMessage: ${error.message}`;
+      msg = `${error.error.message}`;
     }
     return throwError(msg);
   }

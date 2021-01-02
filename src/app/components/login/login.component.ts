@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  loginError: string;
 
   constructor(private authService: AuthService, public fb: FormBuilder, public router: Router) {
     this.loginForm = this.fb.group({
@@ -25,10 +26,18 @@ export class LoginComponent implements OnInit {
   tryLogin(): void {
     const val = this.loginForm.value;
     if (val.username && val.password) {
-      this.authService.signIn(val);
-      // this.authService.keepLoggedIn();
-      // TODO keep logged in ?
-
+      this.authService.signIn(val).subscribe(
+        loginJson => {
+          localStorage.setItem('id', loginJson.id);
+          this.authService.getUserProfile(loginJson.id).subscribe((userJson: any) => {
+            localStorage.setItem('currentUser', userJson);
+            this.router.navigate(['']);
+          });
+        },
+        err => {
+          this.loginError = err.error.message;
+        }
+      );
     }
   }
 }
