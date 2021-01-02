@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit {
     if (val.username && val.contact_email && val.password && val.secret_code) {
       this.authService.signUp(val).subscribe(
         res => {
-          if (res.status.ok) {
+          if (res.status === 200) {
             this.registerError = res.body.message;
             this.registerForm.reset();
             this.router.navigate(['login']);

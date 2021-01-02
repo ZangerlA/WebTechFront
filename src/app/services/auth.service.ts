@@ -23,7 +23,8 @@ export class AuthService{
     this.options = {
       headers: this.headers,
       responseType: 'json',
-      withCredentials: true
+      withCredentials: true,
+      observe: 'response'
     };
   }
 
@@ -39,7 +40,7 @@ export class AuthService{
 
   isLoggedIn(): Observable<any> {
     const validateSession = `${this.apiEndpoint}/auth/validateSession`;
-    return this.http.get(validateSession, this.options);
+    return this.http.get<any>(validateSession, this.options);
   }
 
   logout(): void {
