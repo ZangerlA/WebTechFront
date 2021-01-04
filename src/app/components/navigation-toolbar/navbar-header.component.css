@@ -7,6 +7,7 @@
 }
 
 .sidenav-drawer {
+  border-right: 1px solid rgba(255,255,255,0.5);
   background-color: #373737;
   padding: 20px;
   width: 200px;
@@ -21,4 +22,5 @@ profil, logout{
 
 .toolbar{
   background: #373737 linear-gradient(rgba(60, 60, 60, 0.8), rgba(0, 0, 0, 0.8));
+  color: #d0d0d0;
 }

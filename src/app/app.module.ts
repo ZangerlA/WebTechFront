@@ -26,14 +26,12 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 
 
-
 const routes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard] },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'nav', component: NavbarHeaderComponent}
   ];
-
 
 // @ts-ignore
 @NgModule({
@@ -45,7 +43,7 @@ const routes: Routes = [
     NavbarComponent,
     NavbarHeaderComponent,
     NavbarBodyComponent,
-    HomeWelcomeComponent
+    HomeWelcomeComponent,
   ],
   imports: [
     HttpClientModule,
