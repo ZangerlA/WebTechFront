@@ -17,20 +17,38 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthInterceptor } from './services/authconfig.interceptor.service';
 import { AuthGuard } from './services/auth.guard';
 import { HomeComponent } from './components/home/home.component';
-import { NavbarComponent } from './components/navigation/navbar.component';
+import { NavbarComponent } from './components/navigation-container/navbar.component';
 import { NavbarHeaderComponent } from './components/navigation-toolbar/navbar-header.component';
 import { NavbarBodyComponent } from './components/navigation-sidebar/navbar-body.component';
 import { HomeWelcomeComponent } from './components/home-welcome/home-welcome.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
+import { HomeMoviesComponent } from './components/home-movies/home-movies.component';
+import { HomeAnimesComponent } from './components/home-animes/home-animes.component';
+import { HomeGamesComponent } from './components/home-games/home-games.component';
+import { HomeSeriesComponent } from './components/home-series/home-series.component';
+import { MediaSingleComponent } from './components/media-single/media-single.component';
 
 
 const routes: Routes = [
-    { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+    { path: '', component: HomeComponent, canActivate: [AuthGuard], children: [
+        {path:'Movies', component: HomeWelcomeComponent,children: [
+            {path:'singleMovie', component: HomeWelcomeComponent}
+          ]},
+        {path:'Anime', component: HomeWelcomeComponent,children: [
+            {path:'singleAnime', component: HomeWelcomeComponent}
+          ]},
+        {path:'Games', component: HomeWelcomeComponent,children: [
+            {path:'singleGame', component: HomeWelcomeComponent}
+          ]},
+        {path:'Series', component: HomeWelcomeComponent,children: [
+            {path:'singleSerie', component: HomeWelcomeComponent}
+        ]},
+      ] },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
-    { path: 'nav', component: NavbarHeaderComponent}
+    { path: 'nav', component: NavbarBodyComponent}
   ];
 
 // @ts-ignore
@@ -44,6 +62,11 @@ const routes: Routes = [
     NavbarHeaderComponent,
     NavbarBodyComponent,
     HomeWelcomeComponent,
+    HomeMoviesComponent,
+    HomeAnimesComponent,
+    HomeGamesComponent,
+    HomeSeriesComponent,
+    MediaSingleComponent,
   ],
   imports: [
     HttpClientModule,

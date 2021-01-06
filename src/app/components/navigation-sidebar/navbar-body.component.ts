@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-navbar-body',
@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar-body.component.css']
 })
 export class NavbarBodyComponent implements OnInit {
-
+  hidden: boolean;
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  receiveToggleEv(toggle): void{
+    this.hidden = toggle;
+  }
 }

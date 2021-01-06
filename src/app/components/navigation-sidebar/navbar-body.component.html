@@ -1,1 +1,10 @@
-<p>navbar-body works!</p>
+<app-navbar-header (toggle)="sidenavDrawer.toggle()"></app-navbar-header>
+<mat-drawer-container class="sidenav-container" autosize>
+  <mat-drawer #sidenavDrawer class="sidenav-drawer" mode="side" opened="true">
+    <mat-list>
+      <div mat-subheader>Media</div>
+      <a routerLink="/home-movies">Movies</a>
+    </mat-list>
+  </mat-drawer>
+  <ng-component></ng-component>
+</mat-drawer-container>

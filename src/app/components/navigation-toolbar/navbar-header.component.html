@@ -1,5 +1,5 @@
 <mat-toolbar class="toolbar">
-  <button mat-icon-button class="sidebarButton" (click)="drawer.toggle()">
+  <button mat-icon-button class="sidebarButton" (click)="toggleDrawer()">
     <mat-icon>menu</mat-icon>
   </button>
   <span>Teamkill</span>
@@ -7,18 +7,3 @@
   <button mat-button class="profil">Profile</button>
   <button mat-button class="logout">Logout</button>
 </mat-toolbar>
-
-<mat-drawer-container class="sidenav-container" autosize>
-
-  <mat-drawer #drawer class="sidenav-drawer" mode="side">
-    <mat-list>
-      <div mat-subheader>Media</div>
-        <button>Movies</button>
-        <mat-list-item>Anime</mat-list-item>
-        <mat-list-item>Series</mat-list-item>
-        <mat-list-item>Games</mat-list-item>
-    </mat-list>
-  </mat-drawer>
-
-
-</mat-drawer-container>
