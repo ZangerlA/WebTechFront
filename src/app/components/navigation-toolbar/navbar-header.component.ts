@@ -1,4 +1,5 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ToggleService} from "../../services/toggle.service";
 
 @Component({
   selector: 'app-navbar-header',
@@ -6,19 +7,15 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   styleUrls: ['./navbar-header.component.css']
 })
 export class NavbarHeaderComponent implements OnInit {
-  toggleIn: boolean = true;
-  @Output() toggle = new EventEmitter<boolean>();
+  toggleIn: boolean;
 
-  constructor() { }
-  toggleDrawer(): void {
-    if (this.toggleIn === true){
-      this.toggleIn = false;
-    }
-    else {
-      this.toggleIn = true;
-    }
-    this.toggle.emit(this.toggleIn);
-  }
+  constructor(private toggleService: ToggleService) { }
+
   ngOnInit(): void {
+    this.toggleService.toggleThings.subscribe(tog => this.toggleIn = tog);
+  }
+
+  toggleDrawer(): void {
+    this.toggleService.toggle(this.toggleIn);
   }
 }

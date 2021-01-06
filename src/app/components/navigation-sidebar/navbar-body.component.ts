@@ -1,4 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {ToggleService} from "../../services/toggle.service";
+import {MatDrawer} from "@angular/material/sidenav";
 
 @Component({
   selector: 'app-navbar-body',
@@ -6,12 +8,12 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./navbar-body.component.css']
 })
 export class NavbarBodyComponent implements OnInit {
-  hidden: boolean;
-  constructor() { }
+  navHideShow: boolean;
+  @ViewChild('sidenav', {static: true}) drawer: MatDrawer;
+
+  constructor(private toggleService: ToggleService) { }
 
   ngOnInit(): void {
-  }
-  receiveToggleEv(toggle): void{
-    this.hidden = toggle;
+    this.toggleService.toggleThings.subscribe(tog => this.drawer.toggle());
   }
 }
