@@ -28,22 +28,22 @@ import { HomeAnimesComponent } from './components/home-animes/home-animes.compon
 import { HomeGamesComponent } from './components/home-games/home-games.component';
 import { HomeSeriesComponent } from './components/home-series/home-series.component';
 import { MediaSingleComponent } from './components/media-single/media-single.component';
-import { ToggleService} from "./services/toggle.service";
+import { ToggleService} from './services/toggle.service';
 
 
 const routes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard], children: [
-        {path:'Movies', component: HomeMoviesComponent,children: [
-            {path:'singleMovie', component: MediaSingleComponent}
+        {path: 'Movies', component: HomeMoviesComponent, children: [
+            {path: 'singleMovie', component: MediaSingleComponent}
           ]},
-        {path:'Anime', component: HomeWelcomeComponent,children: [
-            {path:'singleAnime', component: HomeWelcomeComponent}
+        {path: 'Anime', component: HomeWelcomeComponent, children: [
+            {path: 'singleAnime', component: HomeWelcomeComponent}
           ]},
-        {path:'Games', component: HomeWelcomeComponent,children: [
-            {path:'singleGame', component: HomeWelcomeComponent}
+        {path: 'Games', component: HomeWelcomeComponent, children: [
+            {path: 'singleGame', component: HomeWelcomeComponent}
           ]},
-        {path:'Series', component: HomeWelcomeComponent,children: [
-            {path:'singleSerie', component: HomeWelcomeComponent}
+        {path: 'Series', component: HomeWelcomeComponent, children: [
+            {path: 'singleSerie', component: HomeWelcomeComponent}
         ]},
       ] },
     { path: 'login', component: LoginComponent },
