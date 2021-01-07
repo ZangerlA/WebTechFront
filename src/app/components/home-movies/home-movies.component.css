@@ -3,3 +3,29 @@
   flex-wrap: wrap;
   justify-content: start;
 }
+
+.SingleMediaContainer{
+  width: 10vw;
+  margin: 10px;
+  border-radius: 5px;
+  border: 2px solid #435a75;
+  background-color: #334254;
+}
+.Media-Image {
+
+}
+.Media-Title-Container{
+  display: flex;
+  justify-content: space-between;
+}
+
+#title{
+  font-size: 1vw;
+}
+
+@media only screen and (max-width: 700px){
+  .SingleMediaContainer{
+    width: 34vw;
+  }
+}
+

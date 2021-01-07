@@ -10,4 +10,7 @@ profil, logout{
 .toolbar{
   background: #373737 linear-gradient(rgba(60, 60, 60, 0.8), rgba(0, 0, 0, 0.8));
   color: #d0d0d0;
+  position:sticky;
+  top: 0;
+  z-index: 1000;
 }

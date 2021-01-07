@@ -1,10 +1,14 @@
 <div class="MovieCont">
-  <app-media-single></app-media-single>
-  <app-media-single></app-media-single>
-  <app-media-single></app-media-single>
-  <app-media-single></app-media-single>
-  <app-media-single></app-media-single>
-  <app-media-single></app-media-single>
-  <app-media-single></app-media-single>
+
+  <mat-card class="SingleMediaContainer" *ngFor="let movie of this.movies">
+    <img mat-card-image class="Media-Image" src="{{movie.imgUrl}}">
+    <mat-card-content class="Media-Title-Container">
+      <p id="title">{{movie.title}}</p>
+      <p id="points">{{movie.points}}/10</p>
+    </mat-card-content>
+  </mat-card>
+
 </div>
+
+
 
