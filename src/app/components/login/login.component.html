@@ -5,7 +5,8 @@
       <mat-card-title>Login</mat-card-title>
       <mat-card-subtitle *ngIf="this.loginError !== ''">{{this.loginError}}</mat-card-subtitle>
       <form class="Login-form" [formGroup]="loginForm" (ngSubmit)="tryLogin()" >
-        <div fxLayout="inline">
+
+        <div fxLayout="column">
           <mat-form-field appearance="outline" id="usern">
             <mat-label>Username</mat-label>
             <input matInput  formControlName="username" required>
