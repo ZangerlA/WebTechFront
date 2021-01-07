@@ -1,18 +1,21 @@
 .SingleMediaContainer{
-  width: 15vw;
-  height: 22vh;
+  width: 10vw;
   margin: 10px;
   border-radius: 5px;
   border: 2px solid #435a75;
-  display: inline-block;
+  background-color: #334254;
 }
-mat-card img {
-
-}
-mat-card-content{
-  bottom: 0;
+.Media-Image {
 
 }
+.Media-Title-Container{
+  display: flex;
+  justify-content: space-between;
+}
 
-
+@media only screen and (max-width: 700px){
+  .SingleMediaContainer{
+    width: 34vw;
+  }
+}
 
