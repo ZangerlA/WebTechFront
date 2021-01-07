@@ -59,8 +59,6 @@ mat-card-title{
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-
-
 }
 
 mat-card-title{
@@ -95,11 +93,17 @@ mat-label{
 }
 
 #login, mat-form-field{
-  fxLayoutAlign:center;
   width: 40%;
-  margin: auto;
-
+  margin: 0px auto 0px auto;
 }
+
+#creatAccount{
+  width: 40%;
+  margin: 20px auto 5px auto;
+}
+
+
+
 
 
 

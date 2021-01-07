@@ -32,9 +32,9 @@ import { ToggleService} from './services/toggle.service';
 import { HomeAddMediaComponent } from './components/home-add-media/home-add-media.component';
 import {MatOptionModule} from '@angular/material/core';
 
-
 const routes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard], children: [
+
         { path: 'newMedia', component: HomeAddMediaComponent },
         { path: 'Movies', component: HomeMoviesComponent, children: [
             { path: 'singleMovie', component: MediaSingleComponent }
@@ -47,6 +47,18 @@ const routes: Routes = [
           ]},
         { path: 'Series', component: HomeWelcomeComponent, children: [
             { path: 'singleSerie', component: HomeWelcomeComponent }
+          ]},
+        {path: 'Movies', component: HomeMoviesComponent, children: [
+            {path: 'singleMovie', component: MediaSingleComponent}
+          ]},
+        {path: 'Anime', component: HomeWelcomeComponent, children: [
+            {path: 'singleAnime', component: HomeWelcomeComponent}
+          ]},
+        {path: 'Games', component: HomeWelcomeComponent, children: [
+            {path: 'singleGame', component: HomeWelcomeComponent}
+          ]},
+        {path: 'Series', component: HomeWelcomeComponent, children: [
+            {path: 'singleSerie', component: HomeWelcomeComponent}
         ]},
       ] },
     { path: 'login', component: LoginComponent },
