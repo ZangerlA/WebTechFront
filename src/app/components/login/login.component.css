@@ -55,7 +55,7 @@ mat-card-title{
 
 .OuterDiv{
   position: absolute;
-  top: 50%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -79,14 +79,29 @@ mat-card-subtitle{
 
 }
 
+/*::ng-deep .mat-form-field-appearance-outline{
+  height: 45px;
+  width: 200px;
+
+}*/
+
+
 input.mat-input-element {
   color: #ffffff;
-  font-size: 2vh
 }
 
 mat-label{
   color: white;
 }
+
+#login, mat-form-field{
+  fxLayoutAlign:center;
+  width: 40%;
+  margin: auto;
+
+}
+
+
 
 
 

@@ -4,32 +4,25 @@
     <mat-card fxFlex="30" class="FormContainer">
       <mat-card-title>Login</mat-card-title>
       <mat-card-subtitle *ngIf="this.loginError !== ''">{{this.loginError}}</mat-card-subtitle>
-      <form class="Login-form" [formGroup]="loginForm" (ngSubmit)="tryLogin()" >
+      <form class="Login-form" [formGroup]="loginForm" (ngSubmit)="tryLogin()" fxLayout="column" >
 
-        <div fxLayout="column">
-          <mat-form-field appearance="outline" id="usern">
-            <mat-label>Username</mat-label>
-            <input matInput  formControlName="username" required>
-          </mat-form-field>
 
-          <mat-form-field appearance="outline" id="passw">
-            <mat-label>Password</mat-label>
-            <input matInput type="password" formControlName="password" required>
-          </mat-form-field>
-        </div>
+        <mat-form-field appearance="outline" id="usern">
+          <mat-label>Username</mat-label>
+          <input matInput  formControlName="username" required>
+        </mat-form-field>
+        <mat-form-field appearance="outline" id="passw">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" required>
+        </mat-form-field>
 
-        <div fxLayoutAlign="center">
-          <button mat-raised-button type="submit">Login</button>
-        </div>
+        <button id="login" mat-raised-button type="submit" >Login </button>
 
-      </form>
-
-      <div fxLayoutAlign="center">
-        <a routerLink="/register">
+        <a routerLink="/register" fxLayoutAlign="center">
           <button mat-raised-button>Register</button>
         </a>
-      </div>
 
+      </form>
     </mat-card>
   </div>
 </div>
