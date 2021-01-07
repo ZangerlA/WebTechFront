@@ -1,12 +1,21 @@
-mat-card{
+.SingleMediaContainer{
   width: 10vw;
-  margin: 1vw 1vw 1vw 1vw;
+  margin: 10px;
+  border-radius: 5px;
+  border: 2px solid #435a75;
+  background-color: #334254;
 }
-mat-card img {
+.Media-Image {
+
 }
-mat-card-content{
-  font-size: 0.5em;
+.Media-Title-Container{
+  display: flex;
+  justify-content: space-between;
 }
 
-
+@media only screen and (max-width: 700px){
+  .SingleMediaContainer{
+    width: 34vw;
+  }
+}
 
