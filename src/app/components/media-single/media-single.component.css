@@ -1,11 +1,18 @@
 .SingleMediaContainer{
-  width: 300px;
-  height: 400px;
+  width: 15vw;
+  height: 22vh;
   margin: 10px;
   border-radius: 5px;
+  border: 2px solid #435a75;
+  display: inline-block;
 }
-.mediaIMG{
-  height: 80%;
-  width: 100%;
-  position: ;
+mat-card img {
+
 }
+mat-card-content{
+  bottom: 0;
+
+}
+
+
+
