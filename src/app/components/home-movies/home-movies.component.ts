@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Media} from '../../models/media.model';
-import {FormBuilder} from '@angular/forms';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home-movies',
@@ -9,9 +10,13 @@ import {FormBuilder} from '@angular/forms';
 })
 export class HomeMoviesComponent implements OnInit {
   movies: Media[] = [];
-  searchForm: FormBuilder;
+  searchForm: FormGroup;
 
-  constructor(public fb: FormBuilder) { }
+  constructor(public fb: FormBuilder, private router: Router) {
+    this.searchForm = this.fb.group({
+      search: ['']
+    });
+  }
 
   ngOnInit(): void {
     this.fillContent();
@@ -32,6 +37,10 @@ export class HomeMoviesComponent implements OnInit {
     movie2.title = 'Star wars';
     movie2.points = 3;
     this.movies.push(movie2);
+  }
+
+  goToAddMedia(): void {
+    this.router.navigate(['newMedia']);
   }
 
 }
