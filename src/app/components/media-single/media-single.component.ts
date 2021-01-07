@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Media} from '../../models/media.model';
 
 @Component({
   selector: 'app-media-single',
@@ -6,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./media-single.component.css']
 })
 export class MediaSingleComponent implements OnInit {
-
-  constructor() { }
+  movie: Media;
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

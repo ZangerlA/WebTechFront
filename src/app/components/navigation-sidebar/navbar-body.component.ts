@@ -14,6 +14,7 @@ export class NavbarBodyComponent implements OnInit {
   constructor(private toggleService: ToggleService) { }
 
   ngOnInit(): void {
+    this.drawer.toggle();
     this.toggleService.toggleThings.subscribe(tog => this.drawer.toggle());
   }
 }

@@ -33,7 +33,7 @@ mat-card-title{
 
 @keyframes slideBg{
   0%{
-   background-image: url("../../../assets/images/tmkl_logos/logogreen.jpg")
+    background-image: url("../../../assets/images/tmkl_logos/logogreen.jpg")
   }
   20%{
     background-image: url("../../../assets/images/tmkl_logos/logoblue.jpg")
