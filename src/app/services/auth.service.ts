@@ -45,8 +45,15 @@ export class AuthService{
 
   logout(): void {
     const logoutUser = `${this.apiEndpoint}/auth/logout`;
-    this.http.get(logoutUser, this.options);
-    this.router.navigate(['login']);
+    this.http.get(logoutUser, this.options).subscribe(
+      res => {
+        this.router.navigate(['login']);
+        },
+      error => {
+        console.log(error);
+      }
+    );
+
   }
 
   // Get User Data
