@@ -4,11 +4,6 @@
   justify-content: start;
 }
 
-
-
-
-
-
 .SingleMediaContainer{
   width: 10vw;
   margin: 10px;
@@ -26,10 +21,6 @@
 
 #title{
   font-size: 1vw;
-}
-
-#points{
-
 }
 
 @media only screen and (max-width: 700px){

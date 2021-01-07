@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Media} from '../../models/media.model';
+import {FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-home-movies',
@@ -8,7 +9,9 @@ import {Media} from '../../models/media.model';
 })
 export class HomeMoviesComponent implements OnInit {
   movies: Media[] = [];
-  constructor() { }
+  searchForm: FormBuilder;
+
+  constructor(public fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.fillContent();

@@ -1,4 +1,5 @@
 <div class="MovieCont">
+
   <mat-card class="SingleMediaContainer" *ngFor="let movie of this.movies">
     <img mat-card-image class="Media-Image" src="{{movie.imgUrl}}">
     <mat-card-content class="Media-Title-Container">
@@ -6,6 +7,7 @@
       <p id="points">{{movie.points}}/10</p>
     </mat-card-content>
   </mat-card>
+
 </div>
 
 
