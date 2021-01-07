@@ -1,49 +1,56 @@
-<div fxLayoutAlign="center center" fxFlexFill>
 
-  <mat-card fxFlex="30" class="FormContainer">
-    <mat-card-title>Create an account !</mat-card-title>
-    <mat-card-subtitle *ngIf="this.registerError !== ''">{{this.registerError}}</mat-card-subtitle>
-    <form class="Register-form" [formGroup]="registerForm" (ngSubmit)="tryRegister()">
-      <div fxLayout="column">
-        <mat-form-field appearance="outline">
-          <mat-label>Username</mat-label>
-          <input matInput type="text" formControlName="username" required>
-        </mat-form-field>
+<div>
 
-        <mat-form-field appearance="outline">
-          <mat-label>Email</mat-label>
-          <input matInput type="email" formControlName="contact_email" required>
-        </mat-form-field>
+  <div class="ImageDiv"></div>
 
-        <mat-form-field appearance="outline">
-          <mat-label>Password</mat-label>
-          <input matInput type="password" formControlName="password" required>
-        </mat-form-field>
+  <div fxLayoutAlign="center center" fxFlexFill class="OuterDiv" fxFlexFill>
+    <mat-card fxFlex="30" class="FormContainer">
+      <mat-card-title>Create an account !</mat-card-title>
+      <mat-card-subtitle *ngIf="this.registerError !== ''">{{this.registerError}}</mat-card-subtitle>
+      <form class="Register-form" [formGroup]="registerForm" (ngSubmit)="tryRegister()">
 
-        <mat-form-field appearance="outline">
-          <mat-label>Confirm Password</mat-label>
-          <input matInput type="password" formControlName="password_control" [errorStateMatcher]="errorMatcher" required>
-          <mat-error *ngIf="registerForm.hasError('passwordsDoNotMatch')">
-            Passwords do not match!
-          </mat-error>
-        </mat-form-field>
+        <div fxLayout="column">
+          <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input matInput type="text" formControlName="username" required>
+          </mat-form-field>
 
-        <mat-form-field appearance="outline">
-          <mat-label>Secret Code</mat-label>
-          <input matInput type="text" formControlName="secret_code" required>
-        </mat-form-field>
-      </div>
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" formControlName="contact_email" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password" required>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput type="password" formControlName="password_control" [errorStateMatcher]="errorMatcher" required>
+            <mat-error *ngIf="registerForm.hasError('passwordsDoNotMatch')">
+              Passwords do not match!
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Secret Code</mat-label>
+            <input matInput type="text" formControlName="secret_code" required>
+          </mat-form-field>
+        </div>
+
+        <div fxLayoutAlign="center">
+          <button mat-raised-button type="submit" id="signupSubmit" [disabled]="!registerForm.valid">Register</button>
+        </div>
+
+      </form>
+
       <div fxLayoutAlign="center">
-        <button mat-raised-button type="submit" id="signupSubmit" [disabled]="!registerForm.valid">Register</button>
+        <a routerLink="/login">
+          <button mat-raised-button>Back To Login</button>
+        </a>
       </div>
 
-    </form>
-
-    <div fxLayoutAlign="center">
-      <a routerLink="/login">
-        <button mat-raised-button>Back To Login</button>
-      </a>
+    </mat-card>
     </div>
-
-  </mat-card>
 </div>
