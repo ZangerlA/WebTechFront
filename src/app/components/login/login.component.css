@@ -4,7 +4,6 @@ button, mat-form-field{
 
 mat-card{
   background-color: rgba(42, 41, 41, 0.8);
-
 }
 
 * {
@@ -41,3 +40,14 @@ mat-card-subtitle{
   padding-top: 1vw;
   color: red;
 }
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: red;
+}
+
+input.mat-input-element {
+  color: green;
+  font-size: 1vh
+}
+
+

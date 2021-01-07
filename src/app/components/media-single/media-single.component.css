@@ -1,17 +1,11 @@
-.SingleMediaContainer{
-  width: 15vw;
-  height: 22vh;
-  margin: 10px;
-  border-radius: 5px;
-  border: 2px solid #435a75;
-  display: inline-block;
+mat-card{
+  width: 10vw;
+  margin: 1vw 1vw 1vw 1vw;
 }
 mat-card img {
-
 }
 mat-card-content{
-  bottom: 0;
-
+  font-size: 0.5em;
 }
 
 

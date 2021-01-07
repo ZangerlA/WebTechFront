@@ -53,7 +53,6 @@ export class AuthService{
         console.log(error);
       }
     );
-
   }
 
   // Get User Data
