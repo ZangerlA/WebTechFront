@@ -4,4 +4,5 @@ export class Media {
   description: string;
   imgUrl: string;
   points: number;
+  type: string;
 }

@@ -14,7 +14,7 @@
   </form>
 </mat-toolbar>
 <div class="MovieCont">
-<mat-card class="SingleMediaContainer" *ngFor="let result of this.searchResult">
+<mat-card class="SingleMediaContainer" *ngFor="let result of this.mediaFound" (click)="addToDatabase(result)">
   <img mat-card-image class="Media-Image" src="{{result.image_url || result.Poster}}">
   <mat-card-content class="Media-Title-Container">
     <p id="title">{{result.title || result.Title}}</p>
