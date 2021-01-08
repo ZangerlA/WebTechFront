@@ -1,8 +1,16 @@
+.row{
+  display: flex;
+  flex-direction: row;
+}
+
 .column{
-  float: left;
   height: 100vh;
   background-color: black;
   z-index: 0;
+}
+
+mat-card-title{
+  text-align: center;
 }
 
 .left, .right{
@@ -14,9 +22,7 @@
   animation-fill-mode: both;
 }
 
-
-
-.middel{
+.middle{
   width: 20vw;
   background-color: black;
 }
@@ -25,17 +31,13 @@
   box-sizing: border-box;
 }
 
-
 .Login-form{
   width: 15vw;
 }
 
-
-
-
-
-
-
+#login{
+  margin-bottom: 2vh;
+}
 
 @keyframes slideBg{
   0%{

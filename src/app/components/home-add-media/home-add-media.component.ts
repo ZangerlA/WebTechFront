@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import { MovieSeriesInfoService } from '../../services/movie-series-info.service';
@@ -8,12 +8,14 @@ import {Media} from '../../models/media.model';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 
+
 @Component({
   selector: 'app-home-add-media',
   templateUrl: './home-add-media.component.html',
   styleUrls: ['./home-add-media.component.css']
 })
 export class HomeAddMediaComponent implements OnInit {
+  @ViewChild('search') searchButton: ElementRef;
   searchNewForm: FormGroup;
   mediaFound = [];
 
@@ -23,6 +25,7 @@ export class HomeAddMediaComponent implements OnInit {
     private animeInfo: AnimeInfoService,
     private seriesMovieService: MovieSeriesInfoService,
     private mediaService: MediaService
+
   ) {
     this.searchNewForm = this.fb.group({
       search: [''],
@@ -77,5 +80,11 @@ export class HomeAddMediaComponent implements OnInit {
         error => {console.error(error); }
       );
     });
+  }
+
+  timeout(): void {
+    const seconds = 2 * 1000;
+    this.searchButton.nativeElement.setAttribute('disabled', 'true');
+    setTimeout(() => { this.searchButton.nativeElement.setAttribute('disabled', 'false'); }, seconds);
   }
 }
