@@ -30,5 +30,4 @@ export class HomeMoviesComponent implements OnInit {
     movie2.points = 3;
     this.movies.push(movie2);
   }
-
 }
