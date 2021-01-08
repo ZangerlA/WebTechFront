@@ -5,6 +5,8 @@ import { MovieSeriesInfoService } from '../../services/movie-series-info.service
 import { AnimeInfoService } from '../../services/anime-info.service';
 import { MediaService } from '../../services/media.service';
 import {Media} from '../../models/media.model';
+import {Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-home-add-media',
@@ -35,39 +37,45 @@ export class HomeAddMediaComponent implements OnInit {
     const val = this.searchNewForm.value;
     if (val.type === 'Anime'){
       this.animeInfo.getAnimeInfo(val.search).subscribe(
-        res => {this.mediaFound = res.body.results; console.log(this.mediaFound); },
+        res => {this.mediaFound = res.body.results; },
         error => {}
       );
     }
     else if (val.type === 'Series'){
       this.seriesMovieService.searchSeries(val.search).subscribe(
-        res => {this.mediaFound = res.body.Search; console.log(res); },
+        res => {this.mediaFound = res.body.Search; },
         error => {console.log(error); }
       );
     }
     else if (val.type === 'Movie'){
       this.seriesMovieService.searchMovies(val.search).subscribe(
-        res => {this.mediaFound = res.body.Search; console.log(res); },
+        res => {this.mediaFound = res.body.Search; },
         error => {console.log(error); }
       );
     }
   }
 
-  convertSearchToMedia(result): Media {
-    const medium = new Media();
+  convertSearchToMedia(result): Observable<Media> {
     if (result.Type === 'movie'){
-      this.seriesMovieService.getMovieInfo(result.imdbID).subscribe(movieRes => console.log(movieRes));
+      return this.seriesMovieService.getMovieInfo(result.imdbID).pipe(map(Media.createFromMovie));
     }
     else if (result.Type === 'series'){
-      this.seriesMovieService.getSeriesInfo(result.imdbID).subscribe(seriesRes => console.log(seriesRes));
+      return this.seriesMovieService.getSeriesInfo(result.imdbID).pipe(map(Media.createFromSeries));
     }
-
-    medium.title = result.title || result.Title;
-    medium.description = result.this.mediaFound.push();
+    else {
+      return new Observable<Media>(observer => {
+        observer.next(Media.createFromAnime(result));
+      });
+    }
   }
 
   addToDatabase(result): void {
-    const medium = this.convertSearchToMedia(result);
+    this.convertSearchToMedia(result).subscribe(media => {
+      console.log(media);
+      this.mediaService.postMedia(media).subscribe(
+        res => {console.log(res); },
+        error => {console.error(error); }
+      );
+    });
   }
-
 }

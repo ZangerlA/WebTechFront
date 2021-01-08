@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
+import {AnimeDto} from '../models/animeDto';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +23,6 @@ export class AnimeInfoService {
 
   getAnimeInfo(animeName: string): Observable<any> {
     const getInfo = `${this.apiEndpoint}/search/anime?q=${animeName}`;
-    return this.http.get(getInfo, this.options);
+    return this.http.get<AnimeDto[]>(getInfo, this.options);
   }
 }

@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
+import {MovieDto, MovieRespone} from '../models/movieDto';
+import {map} from 'rxjs/operators';
+import {SeriesRespone} from '../models/seriesDto';
 
 @Injectable({
   providedIn: 'root'
@@ -30,14 +33,14 @@ export class MovieSeriesInfoService {
     return this.http.get(searchSeries, this.options);
   }
 
-  getMovieInfo(imdbID: string): Observable<any> {
+  getMovieInfo(imdbID: string): Observable<MovieDto> {
     const getMovieInfo = `${this.apiEndpoint}i=${imdbID}`;
-    return this.http.get(getMovieInfo, this.options);
+    return this.http.get<MovieRespone>(getMovieInfo, this.options).pipe(map(res => res.body));
   }
 
   getSeriesInfo(imdbID: string): Observable<any> {
     const getSeriesInfo = `${this.apiEndpoint}i=${imdbID}`;
-    return this.http.get(getSeriesInfo, this.options);
+    return this.http.get<SeriesRespone>(getSeriesInfo, this.options).pipe(map(res => res.body));
   }
 }
 
