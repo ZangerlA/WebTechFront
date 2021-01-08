@@ -1,35 +1,41 @@
-button, mat-form-field{
-  margin: 5px;
+.column{
+  float: left;
+  height: 100vh;
+  background-color: black;
+  z-index: 0;
 }
 
-mat-card{
-  background-color: rgba(233, 231, 231, 0.0);
-
+.left, .right{
+  width: 40vw;
+  background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url("../../../assets/images/tmkl_logos/logogreen.jpg");
+  background-size: contain;
+  background-position: center;
+  animation: slideBg 20s linear infinite 0s;
+  animation-fill-mode: both;
 }
 
-* {
+
+
+.middel{
+  width: 20vw;
+  background-color: black;
+}
+
+*{
   box-sizing: border-box;
 }
 
-body, html {
-  height: 100%;
+
+.Login-form{
+  width: 15vw;
 }
 
-mat-card-title{
-  color: white;
-}
 
-.ImageDiv{
-  background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url("../../../assets/images/tmkl_logos/logogreen.jpg");
-  filter: blur(1px);
-  background-size: contain;
-  background-position: center;
-  z-index: 0;
-  height: 100vh;
 
-  background-color: #000000;
-  animation: slideBg 20s linear infinite 0s ;
-}
+
+
+
+
 
 @keyframes slideBg{
   0%{
@@ -52,60 +58,5 @@ mat-card-title{
   }
 
 }
-
-.OuterDiv{
-  position: absolute;
-  top: 25%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-}
-
-mat-card-title{
-  text-align: center;
-}
-
-mat-card-subtitle{
-  padding-top: 1vw;
-  color: #ffffff;
-}
-
-
-
-::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
-  color: #fffefe;
-
-}
-
-/*::ng-deep .mat-form-field-appearance-outline{
-  height: 45px;
-  width: 200px;
-
-}*/
-
-
-input.mat-input-element {
-  color: #ffffff;
-}
-
-mat-label{
-  color: white;
-}
-
-#login, mat-form-field{
-  width: 40%;
-  margin: 0px auto 0px auto;
-}
-
-#creatAccount{
-  width: 40%;
-  margin: 20px auto 5px auto;
-}
-
-
-
-
-
-
 
 
