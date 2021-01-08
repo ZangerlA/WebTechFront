@@ -21,12 +21,12 @@ export class MovieSeriesInfoService {
   }
 
   searchMovies(movieName: string): Observable<any> {
-    const searchMovies = `${this.apiEndpoint}s=${movieName}`;
+    const searchMovies = `${this.apiEndpoint}s=${movieName}&type=movie`;
     return this.http.get(searchMovies, this.options);
   }
 
   searchSeries(seriesName: string): Observable<any> {
-    const searchSeries = `${this.apiEndpoint}s=${seriesName}`;
+    const searchSeries = `${this.apiEndpoint}s=${seriesName}&type=series`;
     return this.http.get(searchSeries, this.options);
   }
 

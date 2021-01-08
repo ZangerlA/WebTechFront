@@ -1,4 +1,14 @@
 <div class="MovieCont">
+
+  <mat-toolbar id="toolbar-movie">
+    <button mat-raised-button color="primary" id="addNew" (click)="goToAddMedia()">Add a new movie!</button>
+    <form [formGroup]="searchForm" id="searchbar">
+      <mat-form-field class="example-full-width">
+        <input matInput  placeholder="Search..." formControlName="search">
+      </mat-form-field>
+    </form>
+  </mat-toolbar>
+
   <mat-card class="SingleMediaContainer" *ngFor="let movie of this.movies">
     <img mat-card-image class="Media-Image" src="{{movie.imgUrl}}">
     <mat-card-content class="Media-Title-Container">
@@ -6,6 +16,7 @@
       <p id="points">{{movie.points}}/10</p>
     </mat-card-content>
   </mat-card>
+
 </div>
 
 

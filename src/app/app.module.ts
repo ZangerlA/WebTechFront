@@ -28,27 +28,42 @@ import { HomeAnimesComponent } from './components/home-animes/home-animes.compon
 import { HomeGamesComponent } from './components/home-games/home-games.component';
 import { HomeSeriesComponent } from './components/home-series/home-series.component';
 import { MediaSingleComponent } from './components/media-single/media-single.component';
-import { ToggleService} from "./services/toggle.service";
-
+import { ToggleService} from './services/toggle.service';
+import { HomeAddMediaComponent } from './components/home-add-media/home-add-media.component';
+import {MatOptionModule} from '@angular/material/core';
 
 const routes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard], children: [
-        {path:'Movies', component: HomeMoviesComponent,children: [
-            {path:'singleMovie', component: MediaSingleComponent}
+
+        { path: 'newMedia', component: HomeAddMediaComponent },
+        { path: 'Movies', component: HomeMoviesComponent, children: [
+            { path: 'singleMovie', component: MediaSingleComponent }
           ]},
-        {path:'Anime', component: HomeWelcomeComponent,children: [
-            {path:'singleAnime', component: HomeWelcomeComponent}
+        { path: 'Anime', component: HomeWelcomeComponent, children: [
+            { path: 'singleAnime', component: HomeWelcomeComponent }
           ]},
-        {path:'Games', component: HomeWelcomeComponent,children: [
-            {path:'singleGame', component: HomeWelcomeComponent}
+        { path: 'Games', component: HomeWelcomeComponent, children: [
+            { path: 'singleGame', component: HomeWelcomeComponent }
           ]},
-        {path:'Series', component: HomeWelcomeComponent,children: [
-            {path:'singleSerie', component: HomeWelcomeComponent}
+        { path: 'Series', component: HomeWelcomeComponent, children: [
+            { path: 'singleSerie', component: HomeWelcomeComponent }
+          ]},
+        {path: 'Movies', component: HomeMoviesComponent, children: [
+            {path: 'singleMovie', component: MediaSingleComponent}
+          ]},
+        {path: 'Anime', component: HomeWelcomeComponent, children: [
+            {path: 'singleAnime', component: HomeWelcomeComponent}
+          ]},
+        {path: 'Games', component: HomeWelcomeComponent, children: [
+            {path: 'singleGame', component: HomeWelcomeComponent}
+          ]},
+        {path: 'Series', component: HomeWelcomeComponent, children: [
+            {path: 'singleSerie', component: HomeWelcomeComponent}
         ]},
       ] },
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
-    { path: 'nav', component: NavbarBodyComponent}
+    { path: 'nav', component: NavbarBodyComponent }
   ];
 
 // @ts-ignore
@@ -66,6 +81,7 @@ const routes: Routes = [
     HomeGamesComponent,
     HomeSeriesComponent,
     MediaSingleComponent,
+    HomeAddMediaComponent,
   ],
   imports: [
     HttpClientModule,
@@ -82,6 +98,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     MatToolbarModule,
     MatListModule,
+    MatOptionModule,
   ],
   providers: [
     {
