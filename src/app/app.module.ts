@@ -30,7 +30,9 @@ import { HomeSeriesComponent } from './components/home-series/home-series.compon
 import { MediaSingleComponent } from './components/media-single/media-single.component';
 import { ToggleService} from './services/toggle.service';
 import { HomeAddMediaComponent } from './components/home-add-media/home-add-media.component';
-import {MatOptionModule} from '@angular/material/core';
+import { MatOptionModule } from '@angular/material/core';
+import { HomeProfilComponent } from './components/home-profil/home-profil.component';
+import { MediaSinglePopupComponent } from './components/media-single-popup/media-single-popup.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard], children: [
@@ -82,6 +84,8 @@ const routes: Routes = [
     HomeSeriesComponent,
     MediaSingleComponent,
     HomeAddMediaComponent,
+    HomeProfilComponent,
+    MediaSinglePopupComponent,
   ],
   imports: [
     HttpClientModule,
