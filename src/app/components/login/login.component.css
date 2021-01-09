@@ -13,6 +13,19 @@ mat-card-title{
   text-align: center;
 }
 
+mat-card{
+  background-color: #292929;
+  color: white;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline{
+  color: white;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-label {
+  color: white;
+}
+
 .left, .right{
   width: 40vw;
   background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url("../../../assets/images/tmkl_logos/logogreen.jpg");
