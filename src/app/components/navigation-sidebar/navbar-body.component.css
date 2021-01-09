@@ -14,3 +14,39 @@
   position: center;
   z-index: 3;
 }
+
+a{
+  color: white;
+  text-decoration: none;
+}
+
+.main{
+  font-size: large;
+  padding-top: 3vh;
+}
+
+.underPoints{
+  padding-left: 2vh;
+}
+
+.Elements{
+  color: white;
+  font-size: x-large;
+}
+
+.underPoints{
+  list-style-type: circle;
+}
+
+ul li::before{
+  content: "\2022";
+  color: #ffffff;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+ul{
+  list-style: none;
+}

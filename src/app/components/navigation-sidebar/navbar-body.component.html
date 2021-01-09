@@ -1,11 +1,39 @@
 <mat-drawer-container class="sidenav-container" autosize>
   <mat-drawer #sidenav class="sidenav-drawer" mode="side" opened>
     <mat-list>
-      <div mat-subheader>Media</div>
-      <a routerLink="/Movies">Movies</a>
-      <a routerLink="/Anime">Anime</a>
-      <a routerLink="/Games">Game</a>
-      <a routerLink="/Series">Series</a>
+      <div class="Elements" mat-subheader >Media</div>
+      <div fxLayout="column">
+
+        <a class="main movies" routerLink="/Movies">Movies</a>
+          <ul class="underPoints movies">
+            <li><a>placeholder</a></li>
+            <li><a>placeholder</a></li>
+            <li><a>placeholder</a></li>
+          </ul>
+
+
+        <a class="main anime" routerLink="/Anime">Anime</a>
+          <ul class="underPoints movies">
+            <li><a>placeholder</a></li>
+            <li><a>placeholder</a></li>
+            <li><a>placeholder</a></li>
+          </ul>
+
+
+        <a class="main games" routerLink="/Games">Games</a>
+          <ul class="underPoints movies">
+            <li><a>placeholder</a></li>
+            <li><a>placeholder</a></li>
+            <li><a>placeholder</a></li>
+          </ul>
+
+        <a class="main series" routerLink="/Series">Series</a>
+          <ul class="underPoints movies">
+            <li><a>placeholder</a></li>
+            <li><a>placeholder</a></li>
+            <li><a>placeholder</a></li>
+          </ul>
+      </div>
     </mat-list>
   </mat-drawer>
   <ng-component></ng-component>
