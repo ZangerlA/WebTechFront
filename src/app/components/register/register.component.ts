@@ -51,6 +51,10 @@ export class RegisterComponent implements OnInit {
     const condition = form.get('password').value !== form.get('password_control').value;
     return condition ? { passwordsDoNotMatch: true} : null;
   }
+
+  backToLogin(): void{
+    this.router.navigate(['/login']);
+  }
 }
 
 class CrossFieldErrorMatcher implements ErrorStateMatcher {
