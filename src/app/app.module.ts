@@ -33,6 +33,7 @@ import { HomeAddMediaComponent } from './components/home-add-media/home-add-medi
 import { MatOptionModule } from '@angular/material/core';
 import { HomeProfilComponent } from './components/home-profil/home-profil.component';
 import { MediaSinglePopupComponent } from './components/media-single-popup/media-single-popup.component';
+import {MatSelectModule} from '@angular/material/select';
 
 const routes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard], children: [
@@ -103,6 +104,7 @@ const routes: Routes = [
     MatToolbarModule,
     MatListModule,
     MatOptionModule,
+    MatSelectModule
   ],
   providers: [
     {

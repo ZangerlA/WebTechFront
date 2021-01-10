@@ -9,6 +9,10 @@ import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {MatButton} from '@angular/material/button';
 
+interface Type {
+  value: string;
+  viewValue: string;
+}
 
 @Component({
   selector: 'app-home-add-media',
@@ -20,7 +24,7 @@ export class HomeAddMediaComponent implements OnInit {
   searchNewForm: FormGroup;
   mediaFound = [];
 
-  mediaTypes: object [] = [
+  mediaTypes: Type[] = [
     {value: 'Anime', viewValue: 'Anime'},
     {value: 'Series', viewValue: 'Series'},
     {value: 'Movie', viewValue: 'Movie'}

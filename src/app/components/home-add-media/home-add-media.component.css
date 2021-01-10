@@ -6,13 +6,25 @@
 
 #toolbar-movie{
   margin: 0vw 0vw 2vh 0vw;
-  height: 10vh;
+  height: 8vh;
   border: 1px solid rgba(255, 255, 255, 0.5);
   background-color: #292929;
 }
 
+::ng-deep .mat-option *{
+  color: white;
+}
+
+::ng-deep .mat-select,::ng-deep .mat-select-panel{
+  background: #292929;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline{
+  color: white;
+}
+
 #searchbar{
-  margin: 0 auto ;
+  margin: 2vh auto 0 auto ;
 }
 
 #searchbar>mat-form-field{
@@ -43,11 +55,6 @@
 #title{
   font-size: 1vw;
 }
-
-#points{
-
-}
-
 
 .example-full-width{
   margin: 0vh 3vh 0vh 3vh;
