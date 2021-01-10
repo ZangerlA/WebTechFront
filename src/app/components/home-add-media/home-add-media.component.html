@@ -10,7 +10,7 @@
       <input matInput  placeholder="Search..." formControlName="search" required>
     </mat-form-field>
 
-    <button id="login" mat-raised-button type="submit" (click)="timeout()">Search</button>
+    <button id="search" mat-raised-button type="submit" #search (click)="findMedia()">Search</button>
   </form>
 </mat-toolbar>
 <div class="MovieCont">

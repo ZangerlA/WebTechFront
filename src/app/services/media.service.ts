@@ -25,8 +25,11 @@ export class MediaService {
     };
   }
 
-  getMedia(id?: string): Observable<any> {
-    const getMedia = `${this.apiEndpoint}/media/${id}`;
+  getMedia(id?: string, type?: string): Observable<any> {
+    if (type) {
+      type = '?type=' + type;
+    }
+    const getMedia = `${this.apiEndpoint}/media/${id || ''}${type || ''}`;
     return this.http.get(getMedia, this.options);
   }
 

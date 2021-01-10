@@ -7,6 +7,7 @@ import { MediaService } from '../../services/media.service';
 import {Media} from '../../models/media.model';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
+import {MatButton} from '@angular/material/button';
 
 
 @Component({
@@ -15,7 +16,7 @@ import {map} from 'rxjs/operators';
   styleUrls: ['./home-add-media.component.css']
 })
 export class HomeAddMediaComponent implements OnInit {
-  @ViewChild('search') searchButton: ElementRef;
+  @ViewChild('search') searchButton: MatButton;
   searchNewForm: FormGroup;
   mediaFound = [];
 
@@ -36,12 +37,12 @@ export class HomeAddMediaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  findMedia(): any {
+  findMedia(): void {
     const val = this.searchNewForm.value;
     if (val.type === 'Anime'){
       this.animeInfo.getAnimeInfo(val.search).subscribe(
-        res => {this.mediaFound = res.body.results; },
-        error => {}
+        res => {this.mediaFound = res.body.results; console.log(res); },
+        error => {console.error(error); }
       );
     }
     else if (val.type === 'Series'){
@@ -56,6 +57,7 @@ export class HomeAddMediaComponent implements OnInit {
         error => {console.log(error); }
       );
     }
+    this.timeout();
   }
 
   convertSearchToMedia(result): Observable<Media> {
@@ -83,8 +85,8 @@ export class HomeAddMediaComponent implements OnInit {
   }
 
   timeout(): void {
-    const seconds = 2 * 1000;
-    this.searchButton.nativeElement.setAttribute('disabled', 'true');
-    setTimeout(() => { this.searchButton.nativeElement.setAttribute('disabled', 'false'); }, seconds);
+    const seconds = 3 * 1000;
+    this.searchButton.disabled = true;
+    setTimeout(() => { this.searchButton.disabled = false; }, seconds);
   }
 }

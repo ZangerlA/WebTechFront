@@ -7,7 +7,7 @@ export class Media {
   title: string;
   description: string;
   imgUrl: string;
-  points: number;
+  mediaScore: number;
   type: string;
 
   public static createFromAnime(source: AnimeDto): Media {
@@ -16,6 +16,7 @@ export class Media {
     medium.title = source.title;
     medium.description = source.synopsis;
     medium.imgUrl = source.image_url;
+    medium.mediaScore = 0;
     return medium;
   }
 
@@ -25,6 +26,7 @@ export class Media {
     medium.title = source.Title;
     medium.description = source.Plot;
     medium.imgUrl = source.Poster;
+    medium.mediaScore = 0;
     return medium;
   }
   public static createFromSeries(source: SeriesDto): Media {
@@ -33,6 +35,7 @@ export class Media {
     medium.title = source.Title;
     medium.description = source.Plot;
     medium.imgUrl = source.Poster;
+    medium.mediaScore = 0;
     return medium;
   }
 }

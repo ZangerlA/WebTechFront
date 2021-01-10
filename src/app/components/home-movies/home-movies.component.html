@@ -10,10 +10,10 @@
   </mat-toolbar>
 
   <mat-card class="SingleMediaContainer" *ngFor="let movie of this.movies">
-    <img mat-card-image class="Media-Image" src="{{movie.imgUrl}}">
+    <img mat-card-image class="Media-Image" src="{{movie.imageUrl}}">
     <mat-card-content class="Media-Title-Container">
       <p id="title">{{movie.title}}</p>
-      <p id="points">{{movie.points}}/10</p>
+      <p id="points">{{movie.mediaScore}}/10</p>
     </mat-card-content>
   </mat-card>
 
