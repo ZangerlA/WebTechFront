@@ -1,7 +1,9 @@
 
 <mat-toolbar id="toolbar-movie">
   <form [formGroup]="searchNewForm" id="searchbar" (ngSubmit)="findMedia()" required="">
-    <select formControlName="type">
+
+    <select formControlName="type" class="mediaType">
+      <option value="" disabled selected hidden>Select Media Type</option>
       <option value="Anime">Anime</option>
       <option value="Series">Series</option>
       <option value="Movie">Movie</option>
@@ -9,10 +11,11 @@
     <mat-form-field class="example-full-width">
       <input matInput  placeholder="Search..." formControlName="search" required>
     </mat-form-field>
-
-    <button id="search" mat-raised-button type="submit" #search (click)="findMedia()">Search</button>
+    <button id="search" mat-raised-button type="submit" #search>Search</button>
   </form>
 </mat-toolbar>
+
+
 <div class="MovieCont">
 <mat-card class="SingleMediaContainer" *ngFor="let result of this.mediaFound" (click)="addToDatabase(result)">
   <img mat-card-image class="Media-Image" src="{{result.image_url || result.Poster}}">

@@ -7,7 +7,7 @@
 #toolbar-movie{
   margin: 0vw 0vw 2vh 0vw;
   height: 10vh;
-  border: 1px solid rgba(255,255,255,0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   background-color: #292929;
 }
 
@@ -17,6 +17,7 @@
 
 #searchbar>mat-form-field{
   width: 15vw;
+  color: #ffffff;
 }
 
 #addNew{
@@ -45,6 +46,11 @@
 
 #points{
 
+}
+
+
+.example-full-width{
+  margin: 0vh 3vh 0vh 3vh;
 }
 
 @media only screen and (max-width: 700px){

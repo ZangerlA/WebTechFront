@@ -20,6 +20,12 @@ export class HomeAddMediaComponent implements OnInit {
   searchNewForm: FormGroup;
   mediaFound = [];
 
+  mediaTypes: object [] = [
+    {value: 'Anime', viewValue: 'Anime'},
+    {value: 'Series', viewValue: 'Series'},
+    {value: 'Movie', viewValue: 'Movie'}
+  ];
+
   constructor(
     private router: Router,
     private fb: FormBuilder,
