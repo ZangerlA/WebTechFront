@@ -2,12 +2,16 @@
 <mat-toolbar id="toolbar-movie">
   <form [formGroup]="searchNewForm" id="searchbar" (ngSubmit)="findMedia()" required="">
 
-    <select formControlName="type" class="mediaType">
-      <option value="" disabled selected hidden>Select Media Type</option>
-      <option value="Anime">Anime</option>
-      <option value="Series">Series</option>
-      <option value="Movie">Movie</option>
-    </select>
+    <mat-form-field appearance="fill">
+      <mat-label>Media</mat-label>
+      <select matNativeControl required formControlName="type" class="mediaType">
+        <option value="" disabled selected hidden>Select</option>
+        <option value="Anime">Anime</option>
+        <option value="Series">Series</option>
+        <option value="Movie">Movie</option>
+      </select>
+    </mat-form-field>
+
     <mat-form-field class="example-full-width">
       <input matInput  placeholder="Search..." formControlName="search" required>
     </mat-form-field>
