@@ -1,1 +1,10 @@
-<p>media-single-popup works!</p>
+<div class="popupContainer">
+  <h2 mat-dialog-title>{{media.title}}</h2>
+  <mat-dialog-content>
+    <div class="imgContainer">
+      <img src="{{media.imageUrl}}">
+    </div>
+    <p>{{media.description}}
+    </p>
+  </mat-dialog-content>
+</div>

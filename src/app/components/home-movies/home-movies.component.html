@@ -9,7 +9,7 @@
     </form>
   </mat-toolbar>
 
-  <mat-card class="SingleMediaContainer" *ngFor="let movie of this.movies">
+  <mat-card class="SingleMediaContainer" *ngFor="let movie of this.movies" (click)="openPopup(movie)">
     <img mat-card-image class="Media-Image" src="{{movie.imageUrl}}">
     <mat-card-content class="Media-Title-Container">
       <p id="title">{{movie.title}}</p>

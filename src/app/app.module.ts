@@ -33,6 +33,7 @@ import { HomeAddMediaComponent } from './components/home-add-media/home-add-medi
 import { MatOptionModule } from '@angular/material/core';
 import { HomeProfilComponent } from './components/home-profil/home-profil.component';
 import { MediaSinglePopupComponent } from './components/media-single-popup/media-single-popup.component';
+import { MatDialogModule } from "@angular/material/dialog";
 
 import {MatTabsModule} from "@angular/material/tabs";
 
@@ -109,7 +110,8 @@ const routes: Routes = [
     MatListModule,
     MatOptionModule,
     MatTabsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule
   ],
   providers: [
     {
