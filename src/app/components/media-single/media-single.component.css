@@ -1,13 +1,18 @@
 .SingleMediaContainer{
-  width: 10vw;
+  width: 14vw;
   margin: 10px;
   border-radius: 5px;
   border: 2px solid #435a75;
   background-color: #334254;
-
+  position: relative;
+  padding-bottom: 56%;
 }
 .Media-Image {
-
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
 }
 .Media-Title-Container{
   display: flex;

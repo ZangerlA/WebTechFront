@@ -1,0 +1,83 @@
+.Tab {
+  width: 100%;
+  height: 100vh;
+  padding-top: 15vh;
+}
+.ProfilCard{
+  margin: auto;
+  width: 40vw;
+  height: 50vh;
+  background-color: aqua;
+  border: 2px #000000 solid;
+  border-radius: 5px;
+  position: relative;
+  padding: 5px;
+  overflow: hidden;
+}
+
+/* Profil */
+.ProfilImg{
+  width: 100%;
+  height: 100%;
+}
+.ProfilImgDiv{
+  width: 30%;
+  height: 45%;
+  border: 2px black solid;
+  border-radius: 5px;
+}
+
+.ProfilInfoDiv{
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 65%;
+  height: 45%;
+  border: 2px black solid;
+}
+
+.ProfilDisDiv{
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  left: 5px;
+  height: 45%;
+  border: 2px black solid;
+  border-radius: 5px;
+  padding: 3px;
+  min-height: 45%;
+  min-width: 97%;
+}
+.ProfilDisDiv textarea{
+  height: 98%;
+  width: 98%;
+  display: block;
+  margin: auto;
+}
+
+/* Edit Profil */
+
+.ProfilEditCard{
+  margin: auto;
+  width: 40vw;
+  height: 50vh;
+  background-color: aqua;
+  border: 2px #000000 solid;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: 5px;
+}
+
+.MatProfilCard{
+  width: 90%;
+  height: 100%;
+}
+
+mat-form-field{
+  margin: 5px;
+}
+
+
+
