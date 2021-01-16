@@ -6,35 +6,35 @@ export class Media {
   id: string;
   title: string;
   description: string;
-  imgUrl: string;
+  imageUrl: string;
   mediaScore: number;
-  type: string;
+  mediaType: string;
 
   public static createFromAnime(source: AnimeDto): Media {
     const medium = new Media();
-    medium.type = 'Anime';
+    medium.mediaType = 'Anime';
     medium.title = source.title;
     medium.description = source.synopsis;
-    medium.imgUrl = source.image_url;
+    medium.imageUrl = source.image_url;
     medium.mediaScore = 0;
     return medium;
   }
 
   public static createFromMovie(source: MovieDto): Media {
     const medium = new Media();
-    medium.type = 'Movie';
+    medium.mediaType = 'Movie';
     medium.title = source.Title;
     medium.description = source.Plot;
-    medium.imgUrl = source.Poster;
+    medium.imageUrl = source.Poster;
     medium.mediaScore = 0;
     return medium;
   }
   public static createFromSeries(source: SeriesDto): Media {
     const medium = new Media();
-    medium.type = 'Series';
+    medium.mediaType = 'Series';
     medium.title = source.Title;
     medium.description = source.Plot;
-    medium.imgUrl = source.Poster;
+    medium.imageUrl = source.Poster;
     medium.mediaScore = 0;
     return medium;
   }
