@@ -16,32 +16,33 @@
   </mat-tab>
   <mat-tab label="Edit Profil">
     <div class="Tab">
-      <div class="ProfilEditCard">
-        <mat-card class="MatProfilCard">
+      <div class="ProfilEditCard" >
+        <mat-card class="MatProfilCard" fxFlexAlign="center center">
+          <mat-card-title>Edit Profile</mat-card-title>
          <form class="ProfilForm" [formGroup]="editProfil" (ngSubmit)="edit()">
-           <div fxLayout="column">
+           <div fxLayout="column" >
 
              <div class="OutlineDivInp">
-              <mat-form-field appearance="Outline">
+              <mat-form-field appearance="outline">
                 <mat-label>Username</mat-label>
                 <input matInput type="text" formControlName="username">
               </mat-form-field>
              </div>
 
              <div class="OutlineDivInp">
-              <mat-form-field appearance="Outline">
+              <mat-form-field appearance="outline">
                 <mat-label>Email</mat-label>
                 <input matInput type="email" formControlName="user_email">
               </mat-form-field>
              </div>
 
              <div class="OutlinePasswordDiv">
-              <mat-form-field appearance="Outline">
+              <mat-form-field appearance="outline">
                 <mat-label>Password</mat-label>
                 <input matInput type="password" formControlName="password">
               </mat-form-field>
-              <mat-form-field appearance="Outline">
-                <mat-label>Password</mat-label>
+              <mat-form-field appearance="outline" class="nice">
+                <mat-label>Confirme Password</mat-label>
                 <input matInput type="password" formControlName="password_control">
               </mat-form-field>
              </div>
