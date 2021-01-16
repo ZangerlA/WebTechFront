@@ -1,15 +1,19 @@
 .MovieCont{
+
   display: flex;
   flex-wrap: wrap;
   justify-content: start;
 }
 
 #toolbar-movie{
-  margin: 0vw 0vw 2vh 0vw;
-  height: 8vh;
+  margin: 0vh 0vw 2vh 0vw;
+  padding: 1vh 0vw 1vh 0vw;
+  height: 14vh;
   border: 1px solid rgba(255, 255, 255, 0.5);
   background-color: #292929;
 }
+
+
 
 ::ng-deep .mat-option *{
   color: white;
@@ -20,12 +24,14 @@
 }
 
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline{
-  color: white;
-  margin: 0.5vw 0vw 0.5vw 0vw;
+  color: #ffffff;
+  margin: 1vh 0vw 0vh 0vw;
 }
 
-#searchbar{
-  margin: 2vh auto 0 auto ;
+#searchbar {
+  margin: 1vh auto 1vh auto;
+  height: 100px;
+
 }
 
 #searchbar>mat-form-field{
@@ -66,3 +72,4 @@
     width: 34vw;
   }
 }
+
