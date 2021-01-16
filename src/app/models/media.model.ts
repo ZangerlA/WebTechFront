@@ -9,14 +9,27 @@ export class Media {
   imageUrl: string;
   mediaScore: number;
   mediaType: string;
+  genres: string;
+  actors: string;
+  premiered: string;
 
   public static createFromAnime(source: AnimeDto): Media {
+    // tslint:disable-next-line
+    let genres = '';
+    // tslint:disable-next-line
+    for (let genre of source.genres) {
+      genres += genre.name + ', ';
+    }
+
     const medium = new Media();
     medium.mediaType = 'Anime';
     medium.title = source.title;
     medium.description = source.synopsis;
     medium.imageUrl = source.image_url;
     medium.mediaScore = 0;
+    medium.genres = genres;
+    medium.actors = '--';
+    medium.premiered = source.premiered;
     return medium;
   }
 
@@ -27,6 +40,9 @@ export class Media {
     medium.description = source.Plot;
     medium.imageUrl = source.Poster;
     medium.mediaScore = 0;
+    medium.genres = source.Genre;
+    medium.actors = source.Actors;
+    medium.premiered = source.Released;
     return medium;
   }
   public static createFromSeries(source: SeriesDto): Media {
@@ -36,6 +52,9 @@ export class Media {
     medium.description = source.Plot;
     medium.imageUrl = source.Poster;
     medium.mediaScore = 0;
+    medium.genres = source.Genre;
+    medium.actors = source.Actors;
+    medium.premiered = source.Released;
     return medium;
   }
 }

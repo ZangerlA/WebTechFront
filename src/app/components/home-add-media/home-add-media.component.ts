@@ -50,7 +50,7 @@ export class HomeAddMediaComponent implements OnInit {
   findMedia(): void {
     const val = this.searchNewForm.value;
     if (val.type.value === 'Anime'){
-      this.animeInfo.getAnimeInfo(val.search).subscribe(
+      this.animeInfo.searchAnime(val.search).subscribe(
         res => {this.mediaFound = res.body.results; },
         error => {console.error(error); }
       );
@@ -78,16 +78,14 @@ export class HomeAddMediaComponent implements OnInit {
       return this.seriesMovieService.getSeriesInfo(result.imdbID).pipe(map(Media.createFromSeries));
     }
     else {
-      return new Observable<Media>(observer => {
-        observer.next(Media.createFromAnime(result));
-      });
+      return this.animeInfo.getAnimeInfo(result.mal_id).pipe(map(Media.createFromAnime));
     }
   }
 
   addToDatabase(result): void {
     this.convertSearchToMedia(result).subscribe(media => {
       this.mediaService.postMedia(media).subscribe(
-        res => {console.log(res); },
+        res => { },
         error => {console.error(error); }
       );
     });

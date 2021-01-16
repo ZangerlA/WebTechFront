@@ -42,33 +42,13 @@ import {MatSelectModule} from '@angular/material/select';
 
 const routes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard], children: [
-        { path: 'Profil', component:HomeProfilComponent},
+        { path: 'Profil', component: HomeProfilComponent },
         { path: 'newMedia', component: HomeAddMediaComponent },
-        { path: 'Movies', component: HomeMoviesComponent, children: [
-            { path: 'singleMovie', component: MediaSingleComponent }
-          ]},
-        { path: 'Anime', component: HomeWelcomeComponent, children: [
-            { path: 'singleAnime', component: HomeWelcomeComponent }
-          ]},
-        { path: 'Games', component: HomeWelcomeComponent, children: [
-            { path: 'singleGame', component: HomeWelcomeComponent }
-          ]},
-        { path: 'Series', component: HomeWelcomeComponent, children: [
-            { path: 'singleSerie', component: HomeWelcomeComponent }
-          ]},
-        {path: 'Movies', component: HomeMoviesComponent, children: [
-            {path: 'singleMovie', component: MediaSingleComponent}
-          ]},
-        {path: 'Anime', component: HomeWelcomeComponent, children: [
-            {path: 'singleAnime', component: HomeWelcomeComponent}
-          ]},
-        {path: 'Games', component: HomeWelcomeComponent, children: [
-            {path: 'singleGame', component: HomeWelcomeComponent}
-          ]},
-        {path: 'Series', component: HomeWelcomeComponent, children: [
-            {path: 'singleSerie', component: HomeWelcomeComponent}
-        ]},
-      ] },
+        { path: 'Movies', component: HomeMoviesComponent },
+        { path: 'Anime', component: HomeAnimesComponent },
+        { path: 'Games', component: HomeGamesComponent },
+        { path: 'Series', component: HomeSeriesComponent },
+      ]},
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'nav', component: NavbarBodyComponent }

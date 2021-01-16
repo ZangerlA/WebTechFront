@@ -38,7 +38,7 @@ export class MovieSeriesInfoService {
     return this.http.get<MovieRespone>(getMovieInfo, this.options).pipe(map(res => res.body));
   }
 
-  getSeriesInfo(imdbID: string): Observable<any> {
+  getSeriesInfo(imdbID: string): Observable<MovieDto> {
     const getSeriesInfo = `${this.apiEndpoint}i=${imdbID}`;
     return this.http.get<SeriesRespone>(getSeriesInfo, this.options).pipe(map(res => res.body));
   }

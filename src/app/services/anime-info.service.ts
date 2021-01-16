@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Router} from '@angular/router';
-import {AnimeDto} from '../models/animeDto';
+import {AnimeDto, AnimeResponse} from '../models/animeDto';
+import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +22,14 @@ export class AnimeInfoService {
     };
   }
 
-  getAnimeInfo(animeName: string): Observable<any> {
-    const getInfo = `${this.apiEndpoint}/search/anime?q=${animeName}`;
-    return this.http.get<AnimeDto[]>(getInfo, this.options);
+  searchAnime(animeName: string): Observable<any> {
+    const searchAnime = `${this.apiEndpoint}/search/anime?q=${animeName}`;
+    return this.http.get<AnimeDto[]>(searchAnime, this.options);
+  }
+
+  // tslint:disable-next-line:variable-name
+  getAnimeInfo(mal_id: string): Observable<AnimeDto> {
+    const getAnimeInfo = `${this.apiEndpoint}/anime/${mal_id}`;
+    return this.http.get<AnimeResponse>(getAnimeInfo, this.options).pipe(map(res => res.body));
   }
 }

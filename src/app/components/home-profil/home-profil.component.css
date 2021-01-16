@@ -69,12 +69,12 @@
   width: 40vw;
   height: 50vh;
   background-color: #292929;
-  border: 2px #000000 solid;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-content: center;
   padding: 5px;
+  text-align: center;
 }
 
 
@@ -95,6 +95,38 @@ mat-form-field{
   color: #aba7a7;
   width: 100%;
 }
+
+
+mat-card{
+  background-color: #353434;
+  color: white;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline{
+  color: white;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-label {
+  color: white;
+}
+
+mat-card-title{
+  margin-bottom: 2vh;
+}
+
+.nice{
+  margin-left: 3vh;
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-outline{
+  color: white;
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-label {
+  color: white;
+}
+
+
 
 
 
