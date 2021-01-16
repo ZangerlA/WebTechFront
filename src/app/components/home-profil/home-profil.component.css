@@ -7,8 +7,8 @@
   margin: auto;
   width: 40vw;
   height: 50vh;
-  background-color: aqua;
-  border: 2px #000000 solid;
+  background-color: #4c4b4b;
+
   border-radius: 5px;
   position: relative;
   padding: 5px;
@@ -33,7 +33,10 @@
   top: 5px;
   width: 65%;
   height: 45%;
-  border: 2px black solid;
+  background-color: #292929;
+  color: #ffffff;
+  padding: 0.5vh;
+
 }
 
 .ProfilDisDiv{
@@ -42,12 +45,16 @@
   right: 5px;
   left: 5px;
   height: 45%;
-  border: 2px black solid;
   border-radius: 5px;
   padding: 3px;
   min-height: 45%;
   min-width: 97%;
+  background-color: #292929;
+  color: white;
 }
+
+
+
 .ProfilDisDiv textarea{
   height: 98%;
   width: 98%;
@@ -61,7 +68,7 @@
   margin: auto;
   width: 40vw;
   height: 50vh;
-  background-color: aqua;
+  background-color: #292929;
   border: 2px #000000 solid;
   border-radius: 5px;
   display: flex;
@@ -69,6 +76,7 @@
   align-content: center;
   padding: 5px;
 }
+
 
 .MatProfilCard{
   width: 90%;
@@ -78,6 +86,23 @@
 mat-form-field{
   margin: 5px;
 }
+
+
+::ng-deep .mat-tab-label.mat-tab-label-active{
+  color: white;
+}
+::ng-deep .mat-tab-label{
+  color: #aba7a7;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
 
 
 

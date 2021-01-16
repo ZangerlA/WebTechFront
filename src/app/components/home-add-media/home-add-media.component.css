@@ -8,7 +8,7 @@
 #toolbar-movie{
   margin: 0vh 0vw 2vh 0vw;
   padding: 1vh 0vw 1vh 0vw;
-  height: 14vh;
+  height: 10vh;
   border: 1px solid rgba(255, 255, 255, 0.5);
   background-color: #292929;
 }
@@ -72,4 +72,5 @@
     width: 34vw;
   }
 }
+
 
