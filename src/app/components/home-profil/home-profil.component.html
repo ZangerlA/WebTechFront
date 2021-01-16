@@ -1,67 +1,72 @@
 <mat-tab-group>
   <mat-tab label="Profile">
     <div class="Tab">
-      <div class="ProfilCard">
-        <div class="ProfilImgDiv">
-          <img class="ProfilImg" src="../../../assets/images/tmkl_logos/logoblue.jpg">
+      <div class="ProfileCard">
+        <div class="ProfileImgDiv">
+          <img class="ProfileImg" src="../../../assets/images/tmkl_logos/logoblue.jpg">
         </div>
-        <div class="ProfilInfoDiv">
+        <div class="ProfileInfoDiv">
           Seawas Grias di FJ
         </div>
-        <div class="ProfilDisDiv">
+        <div class="ProfileDisDiv">
           JA SERVUS FJ
         </div>
       </div>
     </div>
   </mat-tab>
+
+
+
   <mat-tab label="Edit Profile">
-    <div class="Tab">
-      <div class="ProfilEditCard" >
-        <mat-card class="MatProfilCard" fxFlexAlign="center center">
-          <mat-card-title>Edit Profile</mat-card-title>
-         <form class="ProfilForm" [formGroup]="editProfil" (ngSubmit)="edit()">
-           <div fxLayout="column" >
+    <div class="row">
+      <div class="left column"></div>
+      <div class="middle column">
+        <div fxLayoutAlign="center center" fxFlexFill class="OuterDiv" fxFlexFill>
+          <mat-card class="FormContainer">
+            <mat-card-title>Edit Profile</mat-card-title>
+            <form class="ProfileForm" [formGroup]="editProfil" (ngSubmit)="edit()">
+              <div fxLayout="column" >
 
-             <div class="OutlineDivInp">
-              <mat-form-field appearance="outline">
-                <mat-label>Username</mat-label>
-                <input matInput type="text" formControlName="username">
-              </mat-form-field>
-             </div>
+                <div class="OutlineDivInp">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Username</mat-label>
+                    <input matInput type="text" formControlName="username">
+                  </mat-form-field>
+                </div>
 
-             <div class="OutlineDivInp">
-              <mat-form-field appearance="outline">
-                <mat-label>Email</mat-label>
-                <input matInput type="email" formControlName="user_email">
-              </mat-form-field>
-             </div>
+                <div class="OutlineDivInp">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput type="email" formControlName="user_email">
+                  </mat-form-field>
+                </div>
 
-             <div class="OutlinePasswordDiv">
-              <mat-form-field appearance="outline">
-                <mat-label>Password</mat-label>
-                <input matInput type="password" formControlName="password">
-              </mat-form-field>
-              <mat-form-field appearance="outline" class="nice">
-                <mat-label>Confirme Password</mat-label>
-                <input matInput type="password" formControlName="password_control">
-              </mat-form-field>
-             </div>
+                <div class="OutlinePasswordDiv">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" formControlName="password">
+                  </mat-form-field>
+                  <mat-form-field appearance="outline" class="nice">
+                    <mat-label>Confirme Password</mat-label>
+                    <input matInput type="password" formControlName="password_control">
+                  </mat-form-field>
+                </div>
 
-             <div class="TextareaDiv">
-              <mat-form-field appearance="fill">
-                <mat-label>description</mat-label>
-                <textarea matInput formControlName="description"></textarea>
-              </mat-form-field>
-             </div>
+                <div class="TextareaDiv">
+                  <mat-form-field appearance="fill" class="description">
+                    <mat-label class="description-label">description</mat-label>
+                    <textarea matInput formControlName="description" cdkTextareaAutosize  ></textarea>
+                  </mat-form-field>
+                </div>
 
-             <div>
-              <button mat-raised-button type="submit">Change</button>
-             </div>
-
-           </div>
-         </form>
-        </mat-card>
+                <button mat-raised-button type="submit" fxFlexAlign="center center">Change </button>
+              </div>
+            </form>
+          </mat-card>
+        </div>
       </div>
+      <div class="right column"></div>
     </div>
   </mat-tab>
+
 </mat-tab-group>
