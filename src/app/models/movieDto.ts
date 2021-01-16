@@ -7,4 +7,7 @@ export interface MovieDto {
   Title: string;
   Plot: string;
   Poster: string;
+  Released: string;
+  Actors: string;
+  Genre: string;
 }
