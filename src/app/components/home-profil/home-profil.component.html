@@ -1,1 +1,67 @@
-<p>home-profil works!</p>
+<mat-tab-group>
+  <mat-tab label="Profil">
+    <div class="Tab">
+      <div class="ProfilCard">
+        <div class="ProfilImgDiv">
+          <img class="ProfilImg" src="../../../assets/images/tmkl_logos/logoblue.jpg">
+        </div>
+        <div class="ProfilInfoDiv">
+          <p>Seawas Grias di FJ</p>
+        </div>
+        <div class="ProfilDisDiv">
+          <textarea readonly>
+          </textarea>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="Edit Profil">
+    <div class="Tab">
+      <div class="ProfilEditCard">
+        <mat-card class="MatProfilCard">
+         <form class="ProfilForm" [formGroup]="editProfil" (ngSubmit)="edit()">
+           <div fxLayout="column">
+
+             <div class="OutlineDivInp">
+              <mat-form-field appearance="Outline">
+                <mat-label>Username</mat-label>
+                <input matInput type="text" formControlName="username">
+              </mat-form-field>
+             </div>
+
+             <div class="OutlineDivInp">
+              <mat-form-field appearance="Outline">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" formControlName="user_email">
+              </mat-form-field>
+             </div>
+
+             <div class="OutlinePasswordDiv">
+              <mat-form-field appearance="Outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password">
+              </mat-form-field>
+              <mat-form-field appearance="Outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password_control">
+              </mat-form-field>
+             </div>
+
+             <div class="TextareaDiv">
+              <mat-form-field appearance="fill">
+                <mat-label>description</mat-label>
+                <textarea matInput formControlName="description"></textarea>
+              </mat-form-field>
+             </div>
+
+             <div>
+              <button mat-raised-button type="submit">Change</button>
+             </div>
+
+           </div>
+         </form>
+        </mat-card>
+      </div>
+    </div>
+  </mat-tab>
+</mat-tab-group>

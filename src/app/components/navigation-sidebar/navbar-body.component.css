@@ -2,7 +2,7 @@
   border-right: 1px solid rgba(255,255,255,0.5);
   background: #373737 linear-gradient(0.7rad, rgba(15, 15, 15, 0.8),rgba(50, 50, 50, 0.8), rgba(15, 15, 15, 0.8));
   padding: 20px;
-  width: 200px;
+  width: 300px;
 }
 .sidenav-container {
   width: 100%;
@@ -10,6 +10,7 @@
   background-color: #292929;
   border: 1px solid rgba(255,255,255,0.5);
 }
+
 #welcome{
   position: center;
   z-index: 3;
@@ -50,3 +51,4 @@ ul li::before{
 ul{
   list-style: none;
 }
+
