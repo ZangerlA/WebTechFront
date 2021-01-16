@@ -27,7 +27,7 @@ export class HomeMoviesComponent implements OnInit {
 
   fillContent(): void {
     this.mediaService.getMedia(undefined, 'Movie').subscribe(
-      res => {this.movies = res.body; console.log(res.body); },
+      res => {this.movies = res.body; },
       error => {}
     );
   }

@@ -13,8 +13,6 @@
   background-color: #292929;
 }
 
-
-
 ::ng-deep .mat-option *{
   color: white;
 }
@@ -31,7 +29,6 @@
 #searchbar {
   margin: 1vh auto 1vh auto;
   height: 100px;
-
 }
 
 #searchbar>mat-form-field{
