@@ -98,4 +98,5 @@ export class HomeAddMediaComponent implements OnInit {
     this.searchButton.disabled = true;
     setTimeout(() => { this.searchButton.disabled = false; }, seconds);
   }
+
 }

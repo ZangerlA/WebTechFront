@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from "@angular/forms";
-import {Router} from "@angular/router";
-import {AuthService} from "../../services/auth.service";
+import {FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {AuthService} from '../../services/auth.service';
 
 @Component({
   selector: 'app-home-profil',
@@ -22,7 +22,7 @@ export class HomeProfilComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  edit():void{
+  edit(): void {
 
   }
   passwordValidator(form: FormGroup): {} {
