@@ -1,26 +1,28 @@
-<div>
-  <div class="ImageDiv"></div>
-  <div fxLayoutAlign="center center"  class="OuterDiv" fxFlexFill>
-    <mat-card fxFlex="30" class="FormContainer">
-      <mat-card-title>Login</mat-card-title>
-      <mat-card-subtitle *ngIf="this.loginError !== ''">{{this.loginError}}</mat-card-subtitle>
-      <form class="Login-form" [formGroup]="loginForm" (ngSubmit)="tryLogin()" fxLayout="column" >
+<div class="row">
 
+  <div class="left column"></div>
 
-        <mat-form-field appearance="outline" id="usern">
-          <mat-label>Username</mat-label>
-          <input matInput  formControlName="username" required>
-        </mat-form-field>
-        <mat-form-field appearance="outline" id="passw">
-          <mat-label>Password</mat-label>
-          <input matInput type="password" formControlName="password" required>
-        </mat-form-field>
-
-        <button id="login" mat-raised-button type="submit" >Login </button>
-
-        <button id="creatAccount" mat-raised-button (click)="createAccount()">Create Account</button>
-
-      </form>
-    </mat-card>
+  <div class="middle column">
+    <div fxLayoutAlign="center center"  class="OuterDiv" fxFlexFill>
+      <mat-card class="FormContainer">
+        <mat-card-title>Login</mat-card-title>
+        <mat-card-subtitle *ngIf="this.loginError !== ''">{{this.loginError}}</mat-card-subtitle>
+        <form class="Login-form" [formGroup]="loginForm" (ngSubmit)="tryLogin()" fxLayout="column" >
+          <mat-form-field appearance="outline" id="usern">
+            <mat-label>Username</mat-label>
+            <input matInput  formControlName="username" required>
+          </mat-form-field>
+          <mat-form-field appearance="outline" id="passw">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password" required>
+          </mat-form-field>
+          <button id="login" mat-raised-button type="submit" color="primary">Login </button>
+          <button id="creatAccount" mat-raised-button (click)="createAccount()">Create Account</button>
+        </form>
+      </mat-card>
+    </div>
   </div>
+
+  <div class="right column"></div>
+
 </div>
