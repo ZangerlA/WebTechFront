@@ -15,13 +15,13 @@ import { User } from "../../models/user.model";
 export class WatchlistAllUsersComponent implements OnInit {
   searchUserWatchlist: FormGroup;
   watchlistsFound: any [];
-  mediaFound: any[];
-  usersFound: any[];
+  mediaFound: any[] = [];
+  usersFound: any[] = [];
 
   constructor(public watchlistService: WatchlistService, public mediaService: MediaService, public popup: MatDialog, private fb: FormBuilder) {
     this.searchUserWatchlist = this.fb.group({
       user: ['']
-    })
+    });
   }
 
   ngOnInit(): void {
@@ -29,24 +29,36 @@ export class WatchlistAllUsersComponent implements OnInit {
 
   }
 
-  getAllWatchlists(): void{
-    this.watchlistService.getWatchlistUsers().subscribe(res => {this.watchlistsFound = res.body;
-        //let help = 0;
-        for (let users of this.watchlistsFound){
-          /*console.log(Object.keys(users))
-          console.log(Object.values(users))
-          console.log(Object.entries(users))
-          this.usersFound.push(Object.keys(users));
-          this.usersFound[help] = Object.keys(users)
-          console.log(this.usersFound)
-          help++;*/
-        }
-    });
-
+  getWatchListOfUser(username: string): void{
+    const idArray = [];
+    for (const user of this.watchlistsFound) {
+      if (Object.keys(user)[0] === username) {
+        idArray.push(user[username]);
+      }
+    }
+    this.getMediasFromWatchlist(idArray);
   }
 
-  findWatchlist(userId: string):void{
+  getMediasFromWatchlist(idArray: string[]): void{
+    this.mediaFound = [];
+    for (const id of idArray[0]){
+      this.mediaService.getMedia(id, undefined).subscribe(res => {
+        this.mediaFound.push(res.body);
+      });
+    }
+  }
 
+  getAllWatchlists(): void{
+    this.watchlistService.getWatchlistUsers().subscribe(res => {
+      this.watchlistsFound = res.body;
+      for (const user of this.watchlistsFound){
+        this.usersFound.push(Object.keys(user)[0]);
+      }
+    });
+  }
+
+  findWatchlist(): void{
+    this.getWatchListOfUser(this.searchUserWatchlist.value.user);
   }
 
   openPopup(media: Media): void{

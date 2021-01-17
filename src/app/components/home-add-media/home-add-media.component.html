@@ -1,7 +1,7 @@
 <div class="outerDiv" >
 <mat-toolbar id="toolbar-movie">
   <form [formGroup]="searchNewForm" id="searchbar" (ngSubmit)="findMedia()" required="">
-
+    <div id="formFieldsContainer">
     <mat-form-field appearance="outline" id="typeSelector">
       <mat-label>Type</mat-label>
       <mat-select formControlName="type" class="mediaType" required>
@@ -16,6 +16,7 @@
       <input matInput required formControlName="search">
     </mat-form-field>
     <button id="searchButton" mat-raised-button type="submit" #search><mat-icon>search</mat-icon></button>
+    </div>
   </form>
 </mat-toolbar>
 

@@ -6,9 +6,6 @@
 }
 
 #toolbar-movie{
-  margin: 0vh 0vw 2vh 0vw;
-  padding: 1vh 0vw 1vh 0vw;
-  height: 10vh;
   border: 1px solid rgba(255, 255, 255, 0.5);
   background-color: #292929;
   position:sticky;
@@ -29,14 +26,20 @@
   margin: 1vh 0vw 0vh 0vw;
 }
 
-#searchbar {
-  margin: 1vh auto 1vh auto;
-  height: 100px;
+#formFieldsContainer{
+  font-size: 15px;
 }
 
-#searchbar>mat-form-field{
-  width: 15vw;
+#searchbar {
+  margin: 2vh auto 0vh auto;
+}
+
+#searchbar mat-form-field{
   color: #ffffff;
+}
+
+#searchButton{
+  height: 4.5vh;
 }
 
 #addNew{

@@ -1,10 +1,21 @@
+.MovieCont{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+
 #toolbar-watchlists{
-  margin: 0vh 0vw 2vh 0vw;
-  padding: 1vh 0vw 1vh 0vw;
-  height: 10vh;
   border: 1px solid rgba(255, 255, 255, 0.5);
   background-color: #292929;
+  position:sticky;
+  top: 0;
+  z-index: 1000;
 }
+
+#formFieldContainer{
+  font-size: 15px;
+}
+
 ::ng-deep .mat-option *{
   color: white;
 }
@@ -19,20 +30,27 @@
 }
 
 #searchbar {
-  margin: 1vh auto 1vh auto;
-  height: 100px;
+  margin: 2vh auto 0vh auto;
+
 }
 
-#searchbar>mat-form-field{
-  width: 15vw;
+#searchbar mat-form-field{
   color: #ffffff;
 }
+
+#searchButton{
+  height: 4.5vh;
+  margin-left: 1vw;
+}
+
 .SingleMediaContainer{
   width: 7vw;
   margin: 10px;
   border-radius: 5px;
   border: 2px solid #435a75;
   background-color: #334254;
+  display: flex;
+  flex-direction: column;
 }
 .Media-Image {
 
@@ -43,9 +61,20 @@
 }
 
 #title{
-  font-size: 1vw;
+  font-size: 1.5em;
+}
+
+#spacer{
+  flex: 1 1 auto;
 }
 
 .example-full-width{
   margin: 0vh 3vh 0vh 3vh;
 }
+
+@media only screen and (max-width: 700px){
+  .SingleMediaContainer{
+    width: 34vw;
+  }
+}
+
