@@ -12,8 +12,8 @@
   <mat-card class="SingleMediaContainer" *ngFor="let anime of this.animes" (click)="openPopup(anime)">
     <img mat-card-image class="Media-Image" src="{{anime.imageUrl}}">
     <mat-card-content class="Media-Title-Container">
-      <p id="title">{{anime.title}}</p>
       <p id="points">{{anime.mediaScore}}/10</p>
+      <p id="title">{{anime.title}}</p>
     </mat-card-content>
   </mat-card>
 

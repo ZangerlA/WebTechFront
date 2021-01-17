@@ -20,7 +20,7 @@ export class MediaSinglePopupComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.reviewService.getReview(this.media.id).subscribe(res => this.reviews = res);
+    this.reviewService.getReview(this.media.id).subscribe(res => {this.reviews = res.body; });
   }
 
   setReview(){
