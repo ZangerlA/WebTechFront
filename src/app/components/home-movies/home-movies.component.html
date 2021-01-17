@@ -9,15 +9,19 @@
     </form>
   </mat-toolbar>
 
-  <mat-card class="SingleMediaContainer" *ngFor="let movie of this.movies" (click)="openPopup(movie)">
-    <img mat-card-image class="Media-Image" src="{{movie.imageUrl}}">
-    <span class="spacer"></span>
-    <mat-card-content class="Media-Title-Container">
-      <p id="title">{{movie.title}}</p>
-      <p id="points">{{movie.mediaScore}}/10</p>
-    </mat-card-content>
+  <mat-card class="SingleMediaContainer" *ngFor="let movie of this.movies" >
+    <div class="SingleMediaWrapper" (click)="openPopup(movie)">
+      <img mat-card-image class="Media-Image" src="{{movie.imageUrl}}">
+      <span class="spacer"></span>
+      <mat-card-content class="Media-Title-Container">
+        <p id="title">{{movie.title}}</p>
+        <p id="points">{{movie.mediaScore}}/10</p>
+      </mat-card-content>
+    </div>
+    <mat-card-footer>
+      <button mat-raised-button color="primary" (click)="addToWatchlist(movie.id)">Add to Watchlist</button>
+    </mat-card-footer>
   </mat-card>
-
 </div>
 
 

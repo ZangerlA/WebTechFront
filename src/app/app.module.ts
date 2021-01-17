@@ -34,12 +34,13 @@ import { MatOptionModule } from '@angular/material/core';
 import { HomeProfilComponent } from './components/home-profil/home-profil.component';
 import { MediaSinglePopupComponent } from './components/media-single-popup/media-single-popup.component';
 import { MatDialogModule } from "@angular/material/dialog";
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatTabsModule} from "@angular/material/tabs";
-
 import {MatSelectModule} from '@angular/material/select';
+import { MediaSinglePopupAddMediaComponent } from './components/media-single-popup-add-media/media-single-popup-add-media.component';
 import { WatchlistUserComponent } from './components/watchlist-user/watchlist-user.component';
 import { WatchlistAllUsersComponent } from './components/watchlist-all-users/watchlist-all-users.component';
+
 
 
 const routes: Routes = [
@@ -75,8 +76,10 @@ const routes: Routes = [
     HomeAddMediaComponent,
     HomeProfilComponent,
     MediaSinglePopupComponent,
+    MediaSinglePopupAddMediaComponent,
     WatchlistUserComponent,
     WatchlistAllUsersComponent,
+
   ],
   imports: [
     HttpClientModule,
@@ -96,7 +99,8 @@ const routes: Routes = [
     MatOptionModule,
     MatTabsModule,
     MatSelectModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [
     {

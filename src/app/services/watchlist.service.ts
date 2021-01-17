@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class MediaService {
+export class WatchlistService {
 
   apiEndpoint = environment.API_URL;
   headers = new HttpHeaders();
@@ -30,5 +30,13 @@ export class MediaService {
   getWatchlistUsers(): Observable<any> {
     const getWatchlists = `${this.apiEndpoint}/wantToWatch`;
     return this.http.get(getWatchlists, this.options);
+  }
+  addElementToWatchlist(MediumId: string): Observable<any> {
+    const toAddWatchList = `${this.apiEndpoint}/wantToWatch`;
+    return this.http.post(toAddWatchList, {MediumId: MediumId}, this.options);
+  }
+  removeElementFromWatchlist(MediumId:string): Observable<any> {
+    const removeFromWatchlist = `${this.apiEndpoint}/wantToWatch/${MediumId}`
+    return this.http.delete(removeFromWatchlist,this.options);
   }
 }

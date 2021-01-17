@@ -1,0 +1,37 @@
+::ng-deep.mat-dialog-container {
+  background-color: #292929;
+}
+
+#popupContainer{
+  min-height: 70vh;
+  width: 20vw;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  color: white;
+}
+
+#headerContainer{
+  text-align: center;
+}
+
+#headerContainer>h2{
+  font-size: 2em;
+}
+
+#contentContainer{
+  text-align: center;
+
+}
+
+#imgContainer{
+
+}
+
+#descContainer{
+
+}
+
+#submitButtonsContainer button{
+  margin: auto;
+}

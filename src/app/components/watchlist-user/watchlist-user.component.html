@@ -1,1 +1,15 @@
-<p>watchlist-user works!</p>
+<div class="watchlistWrapper">
+  <mat-card class="SingleMedContainer" *ngFor="let media of this.watchlistMedia">
+    <div class="SingleMediaWrapper" (click)="openPopup(media)">
+      <img mat-card-image class="Media-Image" src="{{media.imageUrl}}">
+      <span class="spacer"></span>
+      <mat-card-content class="Media-Container">
+        <p id="title">{{media.title}}</p>
+        <p id="points">{{media.mediaScore}}/10</p>
+      </mat-card-content>
+    </div>
+    <mat-card-footer>
+      <button mat-raised-button color="primary" (click)="removeFromWatchlist(media.id)">Remove</button>
+    </mat-card-footer>
+  </mat-card>
+</div>
