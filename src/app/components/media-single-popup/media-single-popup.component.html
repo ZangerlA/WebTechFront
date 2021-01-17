@@ -38,6 +38,14 @@
         <div class="writeReviewContainer">
           <h3>Write your own Review:</h3>
           <form class="ProfilForm" [formGroup]="reviewForm" (ngSubmit)="setReview()">
+            <mat-form-field appearance="outline" id="pointSelector">
+              <mat-label>Points</mat-label>
+              <mat-select formControlName="reviewPoints" required>
+                <mat-option *ngFor="let num of [1,2,3,4,5,6,7,8,9,10]">{{num}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+
            <select formControlName="reviewPoints" required>
              <option *ngFor="let num of [1,2,3,4,5,6,7,8,9,10]">{{num}}</option>
            </select>
