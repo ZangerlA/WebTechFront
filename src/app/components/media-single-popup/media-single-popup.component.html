@@ -10,6 +10,12 @@
         <div class="descContainer">
           <h3>Description</h3>
           {{media.description}}
+          <h3>Genre</h3>
+          {{media.genres}}
+          <h3>Actors</h3>
+          {{media.actors}}
+          <h3>Premiered</h3>
+          {{media.premiered}}
         </div>
 
       </div>
@@ -18,10 +24,11 @@
         <ul>
           <li *ngFor="let review of reviews">
             <blockquote>
-              <strong>Score: {{review.reviewPoints}}/10--></strong>
+              Score: {{review.reviewPoints}}/10
               <span> - </span>
                 {{review.reviewText}}
               <cite>
+                <br>--
                 {{review.Author}}
               </cite>
             </blockquote>
@@ -29,8 +36,14 @@
         </ul>
         <span class="spacer"></span>
         <div class="writeReviewContainer">
-
-
+          <h3>Write your own Review:</h3>
+          <form class="ProfilForm" [formGroup]="reviewForm" (ngSubmit)="setReview()">
+           <select formControlName="reviewPoints" required>
+             <option *ngFor="let num of [1,2,3,4,5,6,7,8,9,10]">{{num}}</option>
+           </select>
+           <textarea  formControlName="reviewText" class="reviewFormTextarea" required></textarea>
+            <button type="submit">Submit</button>
+          </form>
         </div>
       </div>
 
