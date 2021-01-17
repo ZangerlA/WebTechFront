@@ -1,0 +1,51 @@
+#toolbar-watchlists{
+  margin: 0vh 0vw 2vh 0vw;
+  padding: 1vh 0vw 1vh 0vw;
+  height: 10vh;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: #292929;
+}
+::ng-deep .mat-option *{
+  color: white;
+}
+
+::ng-deep .mat-select,::ng-deep .mat-select-panel{
+  background: #292929;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline{
+  color: #ffffff;
+  margin: 1vh 0vw 0vh 0vw;
+}
+
+#searchbar {
+  margin: 1vh auto 1vh auto;
+  height: 100px;
+}
+
+#searchbar>mat-form-field{
+  width: 15vw;
+  color: #ffffff;
+}
+.SingleMediaContainer{
+  width: 7vw;
+  margin: 10px;
+  border-radius: 5px;
+  border: 2px solid #435a75;
+  background-color: #334254;
+}
+.Media-Image {
+
+}
+.Media-Title-Container{
+  display: flex;
+  justify-content: space-between;
+}
+
+#title{
+  font-size: 1vw;
+}
+
+.example-full-width{
+  margin: 0vh 3vh 0vh 3vh;
+}

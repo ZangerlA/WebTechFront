@@ -1,1 +1,26 @@
-<p>watchlist-all-users works!</p>
+<div class="outerDiv" >
+  <mat-toolbar id="toolbar-watchlists">
+    <form [formGroup]="searchUserWatchlist" id="searchbar" (ngSubmit)="findWatchlist('a')" required>
+
+      <mat-form-field appearance="outline" id="userSelector">
+        <mat-label>User</mat-label>
+        <mat-select formControlName="user" class="mediaType" required>
+          <mat-option *ngFor="let user of this.watchlistsFound">
+            {{user}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <button id="searchButton" mat-raised-button type="submit" #search><mat-icon>search</mat-icon></button>
+    </form>
+
+  </mat-toolbar>
+  <div class="WatchlistMedia">
+    <mat-card class="SingleMediaContainer" *ngFor="let media of this.mediaFound" (click)="openPopup(media)">
+      <img mat-card-image class="Media-Image" src="{{media.imageUrl}}">
+      <mat-card-content class="Media-Title-Container">
+        <p id="title">{{media.title}}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

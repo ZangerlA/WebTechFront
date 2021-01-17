@@ -51,7 +51,8 @@ const routes: Routes = [
         { path: 'Anime', component: HomeAnimesComponent },
         { path: 'Games', component: HomeGamesComponent },
         { path: 'Series', component: HomeSeriesComponent },
-        { path: 'Watchlist', component: WatchlistUserComponent}
+        { path: 'Watchlist', component: WatchlistUserComponent},
+        { path: 'UserWatchlists', component: WatchlistAllUsersComponent}
       ]},
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
