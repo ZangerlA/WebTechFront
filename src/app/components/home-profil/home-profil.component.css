@@ -9,7 +9,7 @@
 
 .ProfileCard{
   width: 30vw;
-  height:54vh ;
+  height:52.5vh ;
   background-color: #403f3f;
   margin: 15vh 5vw 25vh 5vw;
   padding: 0.5vh 0vw 0.5vh 0vw;
@@ -26,24 +26,45 @@
 }
 
 .Between{
-  background-color: red;
   width: 29vw;
   height: 28.5vh;
   margin: 1vh 0.5vw 1vh 0.5vw;
+  display: flex;
+  flex-direction: row;
 }
 
 .Bottom{
   width: 29vw;
   height: 16vh;
-  background-color: blue;
+  background-color: #5a5959;
   margin: 0.5vh 0.5vw 0vh 0.5vw;
 }
 
-.ProfileImg{
-  background-color: white;
+.ImgCol{
   height: 28.5vh;
   width: 16vw;
+
 }
+
+.DataCol{
+  height: 28.5vh;
+  width: 13vw;
+  background-color: #403f3f;
+  display: flex;
+  flex-direction: column;
+}
+
+.DataRow{
+  height: 4vh;
+  width: 12vw;
+  background-color: #5a5959;
+  margin: 7vh 0.5vw 0vh 0.5vw;
+}
+
+
+
+
+
 
 
 /*
@@ -57,6 +78,8 @@ Tab Display
   color: #aba7a7;
   width: 100%;
 }
+
+
 
 /* Edit Profil */
 
