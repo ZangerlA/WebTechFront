@@ -5,9 +5,9 @@ import { MovieSeriesInfoService } from '../../services/movie-series-info.service
 import { AnimeInfoService } from '../../services/anime-info.service';
 import { MediaService } from '../../services/media.service';
 import {Media} from '../../models/media.model';
-import {Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
 import {MatButton} from '@angular/material/button';
+import {MatDialog} from '@angular/material/dialog';
+import {MediaSinglePopupAddMediaComponent} from '../media-single-popup-add-media/media-single-popup-add-media.component';
 
 interface Type {
   value: string;
@@ -23,6 +23,7 @@ export class HomeAddMediaComponent implements OnInit {
   @ViewChild('search') searchButton: MatButton;
   searchNewForm: FormGroup;
   mediaFound = [];
+  details;
 
   mediaTypes: Type[] = [
     {value: 'Anime', viewValue: 'Anime'},
@@ -35,7 +36,8 @@ export class HomeAddMediaComponent implements OnInit {
     private fb: FormBuilder,
     private animeInfo: AnimeInfoService,
     private seriesMovieService: MovieSeriesInfoService,
-    private mediaService: MediaService
+    private mediaService: MediaService,
+    private popup: MatDialog
 
   ) {
     this.searchNewForm = this.fb.group({
@@ -70,31 +72,14 @@ export class HomeAddMediaComponent implements OnInit {
     this.timeout();
   }
 
-  convertSearchToMedia(result): Observable<Media> {
-    if (result.Type === 'movie'){
-      return this.seriesMovieService.getMovieInfo(result.imdbID).pipe(map(Media.createFromMovie));
-    }
-    else if (result.Type === 'series'){
-      return this.seriesMovieService.getSeriesInfo(result.imdbID).pipe(map(Media.createFromSeries));
-    }
-    else {
-      return this.animeInfo.getAnimeInfo(result.mal_id).pipe(map(Media.createFromAnime));
-    }
-  }
-
-  addToDatabase(result): void {
-    this.convertSearchToMedia(result).subscribe(media => {
-      this.mediaService.postMedia(media).subscribe(
-        res => { },
-        error => {console.error(error); }
-      );
-    });
-  }
-
   timeout(): void {
     const seconds = 3 * 1000;
     this.searchButton.disabled = true;
     setTimeout(() => { this.searchButton.disabled = false; }, seconds);
+  }
+
+  openPopup(media: Media): void{
+    this.details = this.popup.open(MediaSinglePopupAddMediaComponent, { data: media });
   }
 
 }

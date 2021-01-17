@@ -38,7 +38,7 @@ export class HomeMoviesComponent implements OnInit {
   }
 
   openPopup(media: Media): void{
-    this.popup.open(MediaSinglePopupComponent,{data: media});
+    this.popup.open(MediaSinglePopupComponent, { data: media });
   }
 
   addToWatchlist(MediaId: string): void{
