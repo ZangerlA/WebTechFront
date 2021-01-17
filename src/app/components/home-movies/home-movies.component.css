@@ -36,12 +36,11 @@
 .spacer{
   flex: 1 1 auto;
 }
-.Media-Image {
 
-}
 .Media-Title-Container{
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: left;
 }
 
 #title{
@@ -50,6 +49,20 @@
 
 #points{
 
+}
+
+mat-card-footer{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+mat-card-footer button{
+  width: 100%;
+}
+
+.SingleMediaWrapper{
+  height: 100%;
 }
 
 @media only screen and (max-width: 700px){
