@@ -38,6 +38,8 @@ import { MatDialogModule } from "@angular/material/dialog";
 import {MatTabsModule} from "@angular/material/tabs";
 
 import {MatSelectModule} from '@angular/material/select';
+import { WatchlistUserComponent } from './components/watchlist-user/watchlist-user.component';
+import { WatchlistAllUsersComponent } from './components/watchlist-all-users/watchlist-all-users.component';
 
 
 const routes: Routes = [
@@ -48,6 +50,7 @@ const routes: Routes = [
         { path: 'Anime', component: HomeAnimesComponent },
         { path: 'Games', component: HomeGamesComponent },
         { path: 'Series', component: HomeSeriesComponent },
+        { path: 'Watchlist', component: WatchlistUserComponent}
       ]},
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
@@ -72,6 +75,8 @@ const routes: Routes = [
     HomeAddMediaComponent,
     HomeProfilComponent,
     MediaSinglePopupComponent,
+    WatchlistUserComponent,
+    WatchlistAllUsersComponent,
   ],
   imports: [
     HttpClientModule,
