@@ -1,9 +1,10 @@
+/* Profil*/
 .Tab {
   width: 100%;
   height: 100vh;
-  padding-top: 15vh;
+  padding-top: 10vh;
 }
-.ProfilCard{
+.ProfileCard{
   margin: auto;
   width: 40vw;
   height: 50vh;
@@ -15,19 +16,18 @@
   overflow: hidden;
 }
 
-/* Profil */
-.ProfilImg{
+.ProfileImg{
   width: 100%;
   height: 100%;
 }
-.ProfilImgDiv{
+.ProfileImgDiv{
   width: 30%;
   height: 45%;
   border: 2px black solid;
   border-radius: 5px;
 }
 
-.ProfilInfoDiv{
+.ProfileInfoDiv{
   position: absolute;
   right: 5px;
   top: 5px;
@@ -39,7 +39,7 @@
 
 }
 
-.ProfilDisDiv{
+.ProfileDisDiv{
   position: absolute;
   bottom: 5px;
   right: 5px;
@@ -62,31 +62,9 @@
   margin: auto;
 }
 
-/* Edit Profil */
-
-.ProfilEditCard{
-  margin: auto;
-  width: 40vw;
-  height: 50vh;
-  background-color: #292929;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  padding: 5px;
-  text-align: center;
-}
-
-
-.MatProfilCard{
-  width: 90%;
-  height: 100%;
-}
-
-mat-form-field{
-  margin: 5px;
-}
-
+/*
+Tab Display
+ */
 
 ::ng-deep .mat-tab-label.mat-tab-label-active{
   color: white;
@@ -96,10 +74,32 @@ mat-form-field{
   width: 100%;
 }
 
+/* Edit Profil */
+
+
+.left, .right{
+  width: 40vw;
+  background-color: #292929;
+}
+
+.middle{
+  width: 20vw;
+}
+
+.column{
+  height: 100vh;
+}
+
+
+.row{
+  display: flex;
+  flex-direction: row;
+}
 
 mat-card{
-  background-color: #353434;
+  background-color: #403f3f;
   color: white;
+
 }
 
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline{
@@ -110,29 +110,19 @@ mat-card{
   color: white;
 }
 
-mat-card-title{
-  margin-bottom: 2vh;
+*{
+  box-sizing: border-box;
 }
 
-.nice{
-  margin-left: 3vh;
+.ProfileForm{
+  width: 17vw;
+  height: auto;
 }
 
-::ng-deep .mat-form-field-appearance-fill .mat-form-field-outline{
+.description-label{
   color: white;
+
 }
-
-::ng-deep .mat-form-field-appearance-fill .mat-form-field-label {
-  color: white;
-}
-
-
-
-
-
-
-
-
 
 
 
