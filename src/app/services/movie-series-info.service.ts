@@ -10,7 +10,7 @@ import {SeriesRespone} from '../models/seriesDto';
   providedIn: 'root'
 })
 export class MovieSeriesInfoService {
-  apiEndpoint = 'http://www.omdbapi.com/?apikey=5fe93688&';
+  apiEndpoint = 'https://www.omdbapi.com/?apikey=5fe93688&';
   headers = new HttpHeaders();
   options: {};
 
