@@ -5,6 +5,7 @@ import {Router} from '@angular/router';
 import {MediaService} from '../../services/media.service';
 import {MatDialog} from "@angular/material/dialog";
 import {MediaSinglePopupComponent} from "../media-single-popup/media-single-popup.component";
+import {WatchlistService} from '../../services/watchlist.service';
 
 @Component({
   selector: 'app-home-movies',
@@ -15,7 +16,7 @@ export class HomeMoviesComponent implements OnInit {
   movies: Media[] = [];
   searchForm: FormGroup;
 
-  constructor(public fb: FormBuilder, private router: Router, private mediaService: MediaService, public popup: MatDialog) {
+  constructor(public fb: FormBuilder, private router: Router, private mediaService: MediaService, public popup: MatDialog, public watchlistService: WatchlistService) {
     this.searchForm = this.fb.group({
       search: ['']
     });
@@ -38,5 +39,9 @@ export class HomeMoviesComponent implements OnInit {
 
   openPopup(media: Media): void{
     this.popup.open(MediaSinglePopupComponent, { data: media });
+  }
+
+  addToWatchlist(MediaId: string): void{
+    this.watchlistService.addElementToWatchlist(MediaId).subscribe(res => console.log(res));
   }
 }
