@@ -5,20 +5,22 @@
       <div class="middleP column">
         <div  class="ProfileCard">
 
-          <div class="Top Part"> lollolooooooooooo</div>
+          <div class="Top Part"> Profile </div>
 
             <div class="Between Part">
               <div class="ImgCol">
-                <img class="ImgCol" src="../../../assets/images/tmkl_logos/logoblue.jpg">
+                <img class="ImgCol" src="{{profile.imgUrl || '../../assets/images/tmkl_logos/logogreen.jpg'}}">
               </div>
 
               <div class="DataCol" fxLayout="column">
-                <div class="DataRow"></div>
-                <div class="DataRow"></div>
+                <div class="DataRow">Hi {{profile.name}}!</div>
+                <div class="DataRow">{{profile.email}}</div>
               </div>
             </div>
 
-          <div class="Bottom Part"></div>
+          <div class="Bottom Part">
+            {{profile.description || ''}}
+          </div>
 
         </div>
       </div>
@@ -70,7 +72,6 @@
 
                 <button mat-raised-button type="submit" fxFlexAlign="center center">Change </button>
               </div>
-
             </form>
           </mat-card>
         </div>
@@ -78,5 +79,4 @@
       <div class="right column"></div>
     </div>
   </mat-tab>
-
 </mat-tab-group>
