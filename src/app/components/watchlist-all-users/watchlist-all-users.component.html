@@ -1,26 +1,33 @@
-<div class="outerDiv" >
+<div class="MovieCont">
+
   <mat-toolbar id="toolbar-watchlists">
-    <form [formGroup]="searchUserWatchlist" id="searchbar" (ngSubmit)="findWatchlist('a')" required>
+    <mat-toolbar-row>
+      <form [formGroup]="searchUserWatchlist" id="searchbar" (ngSubmit)="findWatchlist()" required>
+        <div id="formFieldContainer">
+        <mat-form-field appearance="outline" id="formFieldSelectUser">
+          <mat-label>User</mat-label>
+          <mat-select formControlName="user" id="UserSelector" required>
+            <mat-option *ngFor="let user of this.usersFound" [value]="user">
+              {{user}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+          <button id="searchButton" mat-raised-button type="submit"><mat-icon>search</mat-icon></button>
+        </div>
 
-      <mat-form-field appearance="outline" id="userSelector">
-        <mat-label>User</mat-label>
-        <mat-select formControlName="user" class="mediaType" required>
-          <mat-option *ngFor="let user of this.watchlistsFound">
-            {{user}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <button id="searchButton" mat-raised-button type="submit" #search><mat-icon>search</mat-icon></button>
-    </form>
-
+      </form>
+    </mat-toolbar-row>
   </mat-toolbar>
-  <div class="WatchlistMedia">
-    <mat-card class="SingleMediaContainer" *ngFor="let media of this.mediaFound" (click)="openPopup(media)">
+
+  <mat-card class="SingleMediaContainer" *ngFor="let media of this.mediaFound" (click)="openPopup(media)">
+    <div class="SingleMediaWrapper" (click)="openPopup(media)">
       <img mat-card-image class="Media-Image" src="{{media.imageUrl}}">
+      <span class="spacer"></span>
       <mat-card-content class="Media-Title-Container">
         <p id="title">{{media.title}}</p>
+        <p id="points">{{media.mediaScore}}/10</p>
       </mat-card-content>
-    </mat-card>
-  </div>
+    </div>
+  </mat-card>
+
 </div>

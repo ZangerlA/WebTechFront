@@ -5,14 +5,28 @@
 }
 
 #toolbar-movie{
-  margin: 0vw 0vw 2vh 0vw;
-  height: 100%;
   border: 1px solid rgba(255,255,255,0.5);
   background-color: #292929;
+  position:sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+#formFieldContainer{
+  font-size: 15px;
 }
 
 #searchbar{
-  margin: 0 auto ;
+  margin: 2vh auto 0vh auto;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline{
+  color: #ffffff;
+  margin: 1vh 0vw 0vh 0vw;
+}
+
+#searchbar mat-form-field{
+  color: #ffffff;
 }
 
 #searchbar>mat-form-field{
@@ -24,19 +38,31 @@
   margin-left: 1vw;
 }
 
+.spacer{
+  flex: 1 1 auto;
+}
+
+.SingleMediaWrapper{
+  height: 100%;
+}
+
 .SingleMediaContainer{
   width: 7vw;
   margin: 10px;
   border-radius: 5px;
   border: 2px solid #435a75;
   background-color: #334254;
+  display: flex;
+  flex-direction: column;
 }
-.Media-Image {
+.spacer{
+  flex: 1 1 auto;
+}
 
-}
 .Media-Title-Container{
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: left;
 }
 
 #title{
@@ -45,6 +71,20 @@
 
 #points{
 
+}
+
+mat-card-footer{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+mat-card-footer button{
+  width: 100%;
+}
+
+.SingleMediaWrapper{
+  height: 100%;
 }
 
 @media only screen and (max-width: 700px){
