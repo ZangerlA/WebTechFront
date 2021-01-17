@@ -86,9 +86,10 @@ Tab Display
   width: 20vw;
 }
 
-column{
+.column{
   height: 100vh;
 }
+
 
 .row{
   display: flex;
@@ -114,13 +115,15 @@ mat-card{
 }
 
 .ProfileForm{
-  width: 15vw;
+  width: 17vw;
+  height: auto;
 }
 
 .description-label{
   color: white;
 
 }
+
 
 
 
