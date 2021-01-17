@@ -23,6 +23,7 @@
 <div class="MovieCont">
 <mat-card class="SingleMediaContainer" *ngFor="let result of this.mediaFound" (click)="openPopup(result)">
   <img mat-card-image class="Media-Image" src="{{result.image_url || result.Poster}}">
+  <span id="spacer"></span>
   <mat-card-content class="Media-Title-Container">
     <p id="title">{{result.title || result.Title}}</p>
   </mat-card-content>

@@ -50,6 +50,8 @@
   border-radius: 5px;
   border: 2px solid #435a75;
   background-color: #334254;
+  display: flex;
+  flex-direction: column;
 }
 .Media-Image {
 
@@ -60,7 +62,11 @@
 }
 
 #title{
-  font-size: 1vw;
+  font-size: 1.5em;
+}
+
+#spacer{
+  flex: 1 1 auto;
 }
 
 .example-full-width{
