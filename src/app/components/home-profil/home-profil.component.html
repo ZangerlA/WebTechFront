@@ -18,49 +18,48 @@
 
 
   <mat-tab label="Edit Profile">
-    <div class="row">
+    <div  class="row">
       <div class="left column"></div>
       <div class="middle column">
-        <div fxLayoutAlign="center center" fxFlexFill class="OuterDiv" fxFlexFill>
+        <div fxFlexFill class="OuterDiv" fxFlexFill>
           <mat-card class="FormContainer">
             <mat-card-title>Edit Profile</mat-card-title>
             <form class="ProfileForm" [formGroup]="editProfil" (ngSubmit)="edit()">
+
               <div fxLayout="column" >
+                <mat-form-field appearance="outline">
+                  <mat-label>Username</mat-label>
+                  <input matInput type="text" formControlName="username">
+                </mat-form-field>
 
-                <div class="OutlineDivInp">
-                  <mat-form-field appearance="outline">
-                    <mat-label>Username</mat-label>
-                    <input matInput type="text" formControlName="username">
-                  </mat-form-field>
-                </div>
+                <mat-form-field appearance="outline">
+                  <mat-label>Email</mat-label>
+                  <input matInput type="email" formControlName="user_email">
+                </mat-form-field>
 
-                <div class="OutlineDivInp">
-                  <mat-form-field appearance="outline">
-                    <mat-label>Email</mat-label>
-                    <input matInput type="email" formControlName="user_email">
-                  </mat-form-field>
-                </div>
+                <mat-form-field appearance="outline">
+                  <mat-label>Password</mat-label>
+                  <input matInput type="password" formControlName="password">
+                </mat-form-field>
 
-                <div class="OutlinePasswordDiv">
-                  <mat-form-field appearance="outline">
-                    <mat-label>Password</mat-label>
-                    <input matInput type="password" formControlName="password">
-                  </mat-form-field>
-                  <mat-form-field appearance="outline" class="nice">
-                    <mat-label>Confirme Password</mat-label>
-                    <input matInput type="password" formControlName="password_control">
-                  </mat-form-field>
-                </div>
+                <mat-form-field appearance="outline">
+                  <mat-label>Confirm Password</mat-label>
+                  <input matInput type="password" formControlName="password_control">
+                </mat-form-field>
 
-                <div class="TextareaDiv">
-                  <mat-form-field appearance="fill" class="description">
-                    <mat-label class="description-label">description</mat-label>
-                    <textarea matInput formControlName="description" cdkTextareaAutosize  ></textarea>
-                  </mat-form-field>
-                </div>
+                <mat-form-field appearance="outline">
+                  <mat-label>New Image</mat-label>
+                  <input matInput type="url" formControlName="img_Url">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill" class="description">
+                  <mat-label class="description-label">description</mat-label>
+                  <textarea matInput formControlName="description" cdkTextareaAutosize  ></textarea>
+                </mat-form-field>
 
                 <button mat-raised-button type="submit" fxFlexAlign="center center">Change </button>
               </div>
+
             </form>
           </mat-card>
         </div>
