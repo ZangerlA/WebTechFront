@@ -1,9 +1,9 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import {Media} from "../../models/media.model";
-import {MAT_DIALOG_DATA} from "@angular/material/dialog";
-import {ReviewService} from "../../services/review.service";
-import {Review} from "../../models/review.model";
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {Media} from '../../models/media.model';
+import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {ReviewService} from '../../services/review.service';
+import {Review} from '../../models/review.model';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-media-single-popup',
@@ -21,18 +21,18 @@ export class MediaSinglePopupComponent implements OnInit {
     this.reviewForm = this.fb.group({
       reviewPoints: [''],
       reviewText: ['']
-    })
+    });
   }
 
   ngOnInit(): void {
     this.reviewService.getReview(this.media.id).subscribe(res => this.reviews = res.body);
   }
 
-  setReview(){
+  setReview(): void{
     this.ownReview = new Review();
     this.ownReview.MediumId = this.media.id;
     this.ownReview.reviewText = this.reviewForm.value.reviewText;
     this.ownReview.reviewPoints = this.reviewForm.value.reviewPoints;
-    this.reviewService.postReview(this.ownReview).subscribe(res => this.reviewForm.reset());//TODO response feedback
+    this.reviewService.postReview(this.ownReview).subscribe(res => this.reviewForm.reset()); // TODO response feedback
   }
 }

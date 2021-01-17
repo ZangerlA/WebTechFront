@@ -1,0 +1,25 @@
+<div id="popupContainer">
+  <div id="headerContainer">
+    <h2 mat-dialog-title>{{result.title || result.Title}}</h2>
+  </div>
+  <mat-dialog-content id="contentContainer">
+      <div id="imgContainer">
+        <img src="{{result.image_url || result.Poster}}">
+      </div>
+      <div id="descContainer">
+        <h3>Description</h3>
+        <p>{{result.synopsis || '--'}}</p>
+        <h3>Premiered</h3>
+        <p>{{result.start_date || result.Year}}</p>
+      </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions id="submitButtonsContainer">
+    <button mat-raised-button color="primary" (click)="addToDatabase(result)">
+      Add this media
+    </button>
+    <button mat-raised-button (click)="this.dialogRef.close()">
+      Cancel
+    </button>
+  </mat-dialog-actions>
+</div>
