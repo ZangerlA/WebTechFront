@@ -1,6 +1,11 @@
 .popupContainer{
   width: 35vw;
   height: 35vw;
+  color: white;
+}
+
+::ng-deep.mat-dialog-container {
+  background-color: #403f3f;
 }
 
 .headerContainer h2{
@@ -16,7 +21,7 @@ mat-dialog-content{
   width: 35%;
   height: 100%;
   margin-right: 5px;
-  border-right: 2px black solid;
+
 }
 .imgContainer{
   display: flex;
@@ -38,7 +43,11 @@ mat-dialog-content{
 
 .writeReviewContainer{
   height: 20%;
-  border: 2px blue solid;
+
+  position: sticky;
+  bottom: 0;
+  background-color:#403f3f;
+
 }
 
 li{
