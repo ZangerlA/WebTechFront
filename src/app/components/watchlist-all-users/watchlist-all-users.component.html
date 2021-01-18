@@ -1,5 +1,5 @@
-<div class="MovieCont">
 
+<div class="MovieCont">
   <mat-toolbar id="toolbar-watchlists">
     <mat-toolbar-row>
       <form [formGroup]="searchUserWatchlist" id="searchbar" (ngSubmit)="findWatchlist()" required>
@@ -7,7 +7,7 @@
         <mat-form-field appearance="outline" id="formFieldSelectUser">
           <mat-label>User</mat-label>
           <mat-select formControlName="user" id="UserSelector" required>
-            <mat-option *ngFor="let user of this.usersFound" [value]="user">
+            <mat-option *ngFor="let user of this.WantToWatchUsersFound" [value]="user">
               {{user}}
             </mat-option>
           </mat-select>
@@ -18,16 +18,32 @@
       </form>
     </mat-toolbar-row>
   </mat-toolbar>
-
-  <mat-card class="SingleMediaContainer" *ngFor="let media of this.mediaFound" (click)="openPopup(media)">
-    <div class="SingleMediaWrapper" (click)="openPopup(media)">
-      <img mat-card-image class="Media-Image" src="{{media.imageUrl}}">
-      <span class="spacer"></span>
-      <mat-card-content class="Media-Title-Container">
-        <p id="title">{{media.title}}</p>
-        <p id="points">{{media.mediaScore}}/10</p>
-      </mat-card-content>
-    </div>
-  </mat-card>
-
 </div>
+
+  <mat-tab-group id="tabs">
+    <mat-tab label="WantToWatch">
+      <mat-card class="SingleMediaContainer" *ngFor="let media of this.WantToWatchMediaFound" (click)="openPopup(media)">
+        <div class="SingleMediaWrapper" (click)="openPopup(media)">
+          <img mat-card-image class="Media-Image" src="{{media.imageUrl}}">
+          <span class="spacer"></span>
+          <mat-card-content class="Media-Title-Container">
+            <p class="title">{{media.title}}</p>
+            <p class="points">{{media.mediaScore}}/10</p>
+          </mat-card-content>
+        </div>
+      </mat-card>
+    </mat-tab>
+    <mat-tab label="Watched">
+      <mat-card class="SingleMediaContainer" *ngFor="let media of this.watchedMediaFound" (click)="openPopup(media)">
+        <div class="SingleMediaWrapper" (click)="openPopup(media)">
+          <img mat-card-image class="Media-Image" src="{{media.imageUrl}}">
+          <span class="spacer"></span>
+          <mat-card-content class="Media-Title-Container">
+            <p class="title">{{media.title}}</p>
+            <p class="points">{{media.mediaScore}}/10</p>
+          </mat-card-content>
+        </div>
+      </mat-card>
+    </mat-tab>
+  </mat-tab-group>
+

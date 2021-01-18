@@ -51,7 +51,7 @@ export class HomeSeriesComponent implements OnInit {
   }
 
   addToWatchlist(MediaId: string): void{
-    this.watchlistService.addElementToWatchlist(MediaId).subscribe(res => console.log(res));
+    this.watchlistService.addElementWantToWatchlist(MediaId).subscribe(res => console.log(res));
     this.snackBar.open('Success!', 'dismiss', {
       duration: 2000, panelClass: ['mat-toolbar', 'mat-primary', 'custom-dialog-container']
     });

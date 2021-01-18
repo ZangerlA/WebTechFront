@@ -1,15 +1,33 @@
-<div class="watchlistWrapper">
-  <mat-card class="SingleMedContainer" *ngFor="let media of this.watchlistMedia">
-    <div class="SingleMediaWrapper" (click)="openPopup(media)">
-      <img mat-card-image class="Media-Image" src="{{media.imageUrl}}">
-      <span class="spacer"></span>
-      <mat-card-content class="Media-Container">
-        <p id="title">{{media.title}}</p>
-        <p id="points">{{media.mediaScore}}/10</p>
-      </mat-card-content>
+<mat-tab-group>
+  <mat-tab label="WantToWatch">
+    <div class="watchlistWrapper">
+      <mat-card class="SingleMedContainer" *ngFor="let media of this.wantToWatchListMedia">
+        <div class="SingleMediaWrapper" (click)="openPopup(media)">
+          <img mat-card-image class="Media-Image" src="{{media.imageUrl}}">
+          <span class="spacer"></span>
+          <mat-card-content class="Media-Container">
+            <p class="title">{{media.title}}</p>
+            <p class="points">{{media.mediaScore}}/10</p>
+          </mat-card-content>
+        </div>
+        <mat-card-footer>
+          <button mat-raised-button color="primary" (click)="removeFromWatchlist(media.id)">Remove</button>
+        </mat-card-footer>
+      </mat-card>
     </div>
-    <mat-card-footer>
-      <button mat-raised-button color="primary" (click)="removeFromWatchlist(media.id)">Remove</button>
-    </mat-card-footer>
-  </mat-card>
-</div>
+  </mat-tab>
+  <mat-tab label="Watched">
+    <div class="watchlistWrapper">
+      <mat-card class="SingleMedContainer" *ngFor="let media of this.watchedListMedia">
+        <div class="SingleMediaWrapper" (click)="openPopup(media)">
+          <img mat-card-image class="Media-Image" src="{{media.imageUrl}}">
+          <span class="spacer"></span>
+          <mat-card-content class="Media-Container">
+            <p class="title">{{media.title}}</p>
+            <p class="points">{{media.mediaScore}}/10</p>
+          </mat-card-content>
+        </div>
+      </mat-card>
+    </div>
+  </mat-tab>
+</mat-tab-group>

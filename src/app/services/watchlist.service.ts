@@ -23,20 +23,33 @@ export class WatchlistService {
     };
   }
 
-  getWatchlistUser(): Observable<any> {
+  getWantToWatchListUser(): Observable<any> {
     const getWatchlist = `${this.apiEndpoint}/wantToWatch/currentUser`;
     return this.http.get(getWatchlist, this.options);
   }
-  getWatchlistUsers(): Observable<any> {
+
+  getWantToWatchListUsers(): Observable<any> {
     const getWatchlists = `${this.apiEndpoint}/wantToWatch`;
     return this.http.get(getWatchlists, this.options);
   }
-  addElementToWatchlist(MediumId: string): Observable<any> {
+
+  addElementWantToWatchlist(MediumId: string): Observable<any> {
     const toAddWatchList = `${this.apiEndpoint}/wantToWatch`;
-    return this.http.post(toAddWatchList, {MediumId: MediumId}, this.options);
+    return this.http.post(toAddWatchList,  { MediumId: MediumId }, this.options);
   }
-  removeElementFromWatchlist(MediumId:string): Observable<any> {
-    const removeFromWatchlist = `${this.apiEndpoint}/wantToWatch/${MediumId}`
-    return this.http.delete(removeFromWatchlist,this.options);
+
+  removeElementFromWantToWatchlist(MediumId: string): Observable<any> {
+    const removeFromWatchlist = `${this.apiEndpoint}/wantToWatch/${MediumId}`;
+    return this.http.delete(removeFromWatchlist, this.options);
+  }
+
+  getWatchedListUser(): Observable<any> {
+    const getWatchlist = `${this.apiEndpoint}/watched/currentUser`;
+    return this.http.get(getWatchlist, this.options);
+  }
+
+  getWatchedListUsers(): Observable<any> {
+    const getWatchlists = `${this.apiEndpoint}/watched`;
+    return this.http.get(getWatchlists, this.options);
   }
 }

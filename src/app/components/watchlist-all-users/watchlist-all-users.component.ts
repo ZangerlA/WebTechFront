@@ -14,9 +14,13 @@ import { User } from "../../models/user.model";
 })
 export class WatchlistAllUsersComponent implements OnInit {
   searchUserWatchlist: FormGroup;
-  watchlistsFound: any [];
-  mediaFound: any[] = [];
-  usersFound: any[] = [];
+  wantToWatchListsFound: any [];
+  WantToWatchMediaFound: any[] = [];
+  WantToWatchUsersFound: any[] = [];
+
+  watchedListsFound: any [];
+  watchedMediaFound: any[] = [];
+  watchedUsersFound: any[] = [];
 
   constructor(public watchlistService: WatchlistService, public mediaService: MediaService, public popup: MatDialog, private fb: FormBuilder) {
     this.searchUserWatchlist = this.fb.group({
@@ -25,43 +29,72 @@ export class WatchlistAllUsersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getAllWatchlists();
+    this.getAllWatchlistsAndUsers();
 
   }
 
-  getWatchListOfUser(username: string): void{
-    const idArray = [];
-    for (const user of this.watchlistsFound) {
-      if (Object.keys(user)[0] === username) {
-        idArray.push(user[username]);
+  getAllWatchlistsAndUsers(): void{
+    this.watchlistService.getWantToWatchListUsers().subscribe(res => {
+      this.wantToWatchListsFound = res.body;
+      for (const user of this.wantToWatchListsFound){
+        this.WantToWatchUsersFound.push(Object.keys(user)[0]);
       }
-    }
-    this.getMediasFromWatchlist(idArray);
-  }
+    });
 
-  getMediasFromWatchlist(idArray: string[]): void{
-    this.mediaFound = [];
-    for (const id of idArray[0]){
-      this.mediaService.getMedia(id, undefined).subscribe(res => {
-        this.mediaFound.push(res.body);
-      });
-    }
-  }
-
-  getAllWatchlists(): void{
-    this.watchlistService.getWatchlistUsers().subscribe(res => {
-      this.watchlistsFound = res.body;
-      for (const user of this.watchlistsFound){
-        this.usersFound.push(Object.keys(user)[0]);
+    this.watchlistService.getWatchedListUsers().subscribe(res => {
+      this.watchedListsFound = res.body;
+      for (const user of this.watchedListsFound){
+        this.watchedUsersFound.push(Object.keys(user)[0]);
       }
     });
   }
 
   findWatchlist(): void{
-    this.getWatchListOfUser(this.searchUserWatchlist.value.user);
+    this.getWantToWatchListOfUser(this.searchUserWatchlist.value.user);
+    this.getWatchedListOfUser(this.searchUserWatchlist.value.user);
+  }
+
+  getWantToWatchListOfUser(username: string): void{
+    const idArray = [];
+    for (const user of this.wantToWatchListsFound) {
+      if (Object.keys(user)[0] === username) {
+        idArray.push(user[username]);
+      }
+    }
+    this.getMediasFromWantToWatchWatchlist(idArray);
+  }
+
+  getWatchedListOfUser(username: string): void{
+    const idArray = [];
+    for (const user of this.watchedListsFound) {
+      if (Object.keys(user)[0] === username) {
+        idArray.push(user[username]);
+      }
+    }
+    this.getMediasFromWatchedWatchlist(idArray);
+  }
+
+  getMediasFromWantToWatchWatchlist(idArray: string[]): void{
+    this.WantToWatchMediaFound = [];
+    for (const id of idArray[0]){
+      this.mediaService.getMedia(id, undefined).subscribe(res => {
+        this.WantToWatchMediaFound.push(res.body);
+      });
+    }
+    console.log(this.WantToWatchMediaFound);
+  }
+
+  getMediasFromWatchedWatchlist(idArray: string[]): void{
+    this.watchedMediaFound = [];
+    for (const id of idArray[0]){
+      this.mediaService.getMedia(id, undefined).subscribe(res => {
+        this.watchedMediaFound.push(res.body);
+      });
+    }
+    console.log(this.watchedMediaFound);
   }
 
   openPopup(media: Media): void{
-    this.popup.open(MediaSinglePopupComponent,{data: media});
+    this.popup.open(MediaSinglePopupComponent, {data: media});
   }
 }
