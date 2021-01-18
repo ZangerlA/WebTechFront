@@ -14,14 +14,14 @@
 
               <div class="DataCol" fxLayout="column">
                 <div class="DataRow name1">Username:</div>
-                <div class="DataRow username">Hi TMKL {{profile.name}}!</div>
+                <div class="DataRow"><p>Hi TMKL {{profile.name}}!</p></div>
                 <div class="DataRow name">E-Mail:</div>
                 <div class="DataRow email">{{profile.email}}</div>
               </div>
             </div>
 
           <div class="Bottom Part">
-            {{profile.description || ''}}
+            <p>{{profile.description || ''}}</p>
           </div>
 
         </div>

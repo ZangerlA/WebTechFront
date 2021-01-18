@@ -4,7 +4,7 @@
 
 #popupContainer{
   min-height: 70vh;
-  width: 20vw;
+  width: 15vw;
   display: flex;
   align-content: center;
   flex-direction: column;

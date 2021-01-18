@@ -29,7 +29,19 @@
 
 }
 
-#title{
+/*
+Tab Display
+ */
+
+::ng-deep .mat-tab-label.mat-tab-label-active{
+  color: white;
+}
+::ng-deep .mat-tab-label{
+  color: #aba7a7;
+  width: 100%;
+}
+
+.title{
   font-size: 1vw;
 }
 

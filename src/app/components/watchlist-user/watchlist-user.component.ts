@@ -12,7 +12,8 @@ import {MatSnackBar} from '@angular/material/snack-bar';
   styleUrls: ['./watchlist-user.component.css']
 })
 export class WatchlistUserComponent implements OnInit {
-  watchlistMedia: Media[] = [];
+  wantToWatchListMedia: Media[] = [];
+  watchedListMedia: Media[] = [];
 
   constructor(public watchListService: WatchlistService, public mediaService: MediaService, public popup: MatDialog, private snackBar: MatSnackBar) { }
 
@@ -20,20 +21,28 @@ export class WatchlistUserComponent implements OnInit {
     this.getWatchlist();
   }
   getWatchlist(): void{
-    this.watchListService.getWatchlistUser().subscribe(res => this.getMediasFromWatchlist(res.body));
+    this.watchListService.getWantToWatchListUser().subscribe(res => this.getMediasFromWatchlistAndAddToWantToWatch(res.body));
+    this.watchListService.getWatchedListUser().subscribe(res => this.getMediasFromWatchlistAndAddToWatched(res.body));
   }
-  getMediasFromWatchlist(idArray: string[]): void{
+  getMediasFromWatchlistAndAddToWatched(idArray: string[]): void{
     for (let id of idArray){
-      this.mediaService.getMedia(id, undefined).subscribe(res => this.watchlistMedia.push(res.body));
-      console.log(this.watchlistMedia);
+      this.mediaService.getMedia(id, undefined).subscribe(res => this.watchedListMedia.push(res.body));
+      console.log(this.wantToWatchListMedia);
+    }
+  }
+
+  getMediasFromWatchlistAndAddToWantToWatch(idArray: string[]): void{
+    for (let id of idArray){
+      this.mediaService.getMedia(id, undefined).subscribe(res => this.wantToWatchListMedia.push(res.body));
+      console.log(this.wantToWatchListMedia);
     }
   }
   openPopup(media: Media): void{
-    this.popup.open(MediaSinglePopupComponent,{data: media});
+    this.popup.open(MediaSinglePopupComponent, { data: media });
   }
   removeFromWatchlist(MediaId: string): void{
-    this.watchlistMedia = this.watchlistMedia.filter((media) => media.id !== MediaId);
-    this.watchListService.removeElementFromWatchlist(MediaId).subscribe(res => console.log(res));
+    this.wantToWatchListMedia = this.wantToWatchListMedia.filter((media) => media.id !== MediaId);
+    this.watchListService.removeElementFromWantToWatchlist(MediaId).subscribe(res => console.log(res));
     this.snackBar.open('Success!', 'dismiss', {
       duration: 2000, panelClass: ['mat-toolbar', 'mat-primary', 'custom-dialog-container']
     });
