@@ -37,12 +37,11 @@ mat-dialog-content{
 
 .ReviewContainer{
   width: 80%;
-  display: flex;
+  display: block;
   flex-direction: column;
 }
 
 .writeReviewContainer{
-  height: 20%;
 
   position: sticky;
   bottom: 0;
