@@ -58,3 +58,9 @@ mat-card-footer button{
 .SingleMediaWrapper{
   height: 100%;
 }
+
+@media only screen and (max-width: 700px){
+  .SingleMediaContainer{
+    width: 34vw;
+  }
+}

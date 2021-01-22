@@ -41,6 +41,9 @@
   height: 16vh;
   background-color: #5a5959;
   margin: 0.5vh 0.5vw 0vh 0.5vw;
+  text-align: left;
+  color: white;
+  padding: 10px 20px;
 }
 
 .ImgCol{
