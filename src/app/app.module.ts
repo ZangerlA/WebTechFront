@@ -45,6 +45,7 @@ import { WatchlistAllUsersComponent } from './components/watchlist-all-users/wat
 
 const routes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard], children: [
+        { path: 'Welcome', component: HomeWelcomeComponent },
         { path: 'Profil', component: HomeProfilComponent },
         { path: 'newMedia', component: HomeAddMediaComponent },
         { path: 'Movies', component: HomeMoviesComponent },

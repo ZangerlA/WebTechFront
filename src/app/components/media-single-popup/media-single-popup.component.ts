@@ -4,6 +4,7 @@ import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {ReviewService} from '../../services/review.service';
 import {Review} from '../../models/review.model';
 import {FormBuilder, FormGroup} from '@angular/forms';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-media-single-popup',
@@ -16,7 +17,7 @@ export class MediaSinglePopupComponent implements OnInit {
   ownReview: Review;
   reviewForm: FormGroup;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public mediainc: Media, private reviewService: ReviewService, public fb: FormBuilder) {
+  constructor(@Inject(MAT_DIALOG_DATA) public mediainc: Media, private reviewService: ReviewService, public fb: FormBuilder, private snackBar: MatSnackBar) {
     this.media = mediainc;
     this.reviewForm = this.fb.group({
       reviewPoints: [''],
@@ -37,6 +38,12 @@ export class MediaSinglePopupComponent implements OnInit {
     this.ownReview.MediumId = this.media.id;
     this.ownReview.reviewText = this.reviewForm.value.reviewText;
     this.ownReview.reviewPoints = this.reviewForm.value.reviewPoints;
-    this.reviewService.postReview(this.ownReview).subscribe(res => this.reviewForm.reset()); // TODO response feedback
+    this.reviewService.postReview(this.ownReview).subscribe(res => {
+      this.reviewForm.reset();
+      this.getReview();
+      this.snackBar.open('Success', 'dismiss', {
+        duration: 2000, panelClass: ['mat-toolbar', 'mat-primary', 'custom-dialog-container']
+      });
+    });
   }
 }
