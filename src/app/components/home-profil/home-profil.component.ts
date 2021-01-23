@@ -51,7 +51,6 @@ export class HomeProfilComponent implements OnInit {
     this.profileEditService.putProfil('pwHash', this.editProfil.value.password).subscribe(res => console.log(res));
     this.profileEditService.putProfil('profileImgUrl', this.editProfil.value.img_Url).subscribe(res => console.log(res));
     this.profileEditService.putProfil('userDescription', this.editProfil.value.description).subscribe(res => {
-      console.log(res);
       this.getProfil();
     });
     this.snackBar.open('Success!', 'dismiss', {
