@@ -65,13 +65,7 @@ Tab Display
   display: flex;
   flex-direction: column;
 }
-.Media-Image {
 
-}
-.Media-Title-Container{
-  display: flex;
-  justify-content: space-between;
-}
 
 .title{
   font-size: 1.5em;
