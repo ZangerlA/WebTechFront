@@ -45,15 +45,15 @@ import { WatchlistAllUsersComponent } from './components/watchlist-all-users/wat
 
 const routes: Routes = [
     { path: '', component: HomeComponent, canActivate: [AuthGuard], children: [
-        { path: 'Welcome', component: HomeWelcomeComponent },
-        { path: 'Profil', component: HomeProfilComponent },
-        { path: 'newMedia', component: HomeAddMediaComponent },
-        { path: 'Movies', component: HomeMoviesComponent },
-        { path: 'Anime', component: HomeAnimesComponent },
-        { path: 'Games', component: HomeGamesComponent },
-        { path: 'Series', component: HomeSeriesComponent },
-        { path: 'Watchlist', component: WatchlistUserComponent},
-        { path: 'UserWatchlists', component: WatchlistAllUsersComponent}
+        { path: 'Welcome', component: HomeWelcomeComponent, canActivate: [AuthGuard] },
+        { path: 'Profil', component: HomeProfilComponent, canActivate: [AuthGuard] },
+        { path: 'newMedia', component: HomeAddMediaComponent, canActivate: [AuthGuard] },
+        { path: 'Movies', component: HomeMoviesComponent, canActivate: [AuthGuard] },
+        { path: 'Anime', component: HomeAnimesComponent, canActivate: [AuthGuard] },
+        { path: 'Games', component: HomeGamesComponent, canActivate: [AuthGuard] },
+        { path: 'Series', component: HomeSeriesComponent, canActivate: [AuthGuard] },
+        { path: 'Watchlist', component: WatchlistUserComponent, canActivate: [AuthGuard]},
+        { path: 'UserWatchlists', component: WatchlistAllUsersComponent, canActivate: [AuthGuard]}
       ]},
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
