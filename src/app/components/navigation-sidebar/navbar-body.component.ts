@@ -17,4 +17,12 @@ export class NavbarBodyComponent implements OnInit {
     this.drawer.toggle();
     this.toggleService.toggleThings.subscribe(tog => this.drawer.toggle());
   }
+  isLargeScreen() {
+    const width = window.innerWidth;
+    if (width > 700) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

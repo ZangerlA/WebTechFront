@@ -83,5 +83,17 @@ mat-card-footer button{
   .SingleMediaContainer{
     width: 34vw;
   }
+  #title{
+    font-size: 6vw;
+  }
+  #addNew{
+
+  }
+  #toolbar-movie{
+    justify-content: center;
+  }
+  #searchbar{
+    display: none;
+  }
 }
 
