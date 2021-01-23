@@ -1,5 +1,5 @@
 <mat-drawer-container class="sidenav-container" autosize>
-  <mat-drawer #sidenav class="sidenav-drawer" mode="side" opened>
+  <mat-drawer #sidenav class="sidenav-drawer" [mode]="isLargeScreen() ? 'side' : 'over'" [opened]="isLargeScreen()">
     <mat-list>
       <div class="Elements" mat-subheader >Media</div>
       <div fxLayout="column">
