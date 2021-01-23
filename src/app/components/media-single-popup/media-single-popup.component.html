@@ -22,19 +22,21 @@
 
 
         <div class="ReviewContainer">
-          <ul>
-            <li *ngFor="let review of reviews">
-              <blockquote>
-                Score: {{review.reviewPoints}}/10
-                <span> - </span>
-                  {{review.reviewText}}
-                <cite>
-                  <br>--
-                  {{review.Author}}
-                </cite>
-              </blockquote>
-            </li>
-          </ul>
+          <div id="MediaReviews">
+            <ul>
+              <li *ngFor="let review of reviews">
+                <blockquote>
+                  Score: {{review.reviewPoints}}/10
+                  <span> - </span>
+                    {{review.reviewText}}
+                  <cite>
+                    <br>--
+                    {{review.Author}}
+                  </cite>
+                </blockquote>
+              </li>
+            </ul>
+          </div>
           <span class="spacer"></span>
           <div class="writeReviewContainer">
             <h3>Write your own Review:</h3>

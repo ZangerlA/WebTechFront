@@ -21,7 +21,6 @@ mat-dialog-content{
   width: 35%;
   height: 100%;
   margin-right: 5px;
-
 }
 .imgContainer{
   display: flex;
@@ -37,16 +36,16 @@ mat-dialog-content{
 
 .ReviewContainer{
   width: 80%;
-  display: block;
+  display: flex;
   flex-direction: column;
 }
 
+#MediaReviews{
+
+}
+
 .writeReviewContainer{
-
-  position: sticky;
-  bottom: 0;
   background-color:#403f3f;
-
 }
 
 li{

@@ -21,7 +21,8 @@
 </div>
 
   <mat-tab-group id="tabs">
-    <mat-tab label="WantToWatch">
+    <mat-tab id="WantToWatchTab" label="WantToWatch">
+      <div class="MovieCont">
       <mat-card class="SingleMediaContainer" *ngFor="let media of this.WantToWatchMediaFound" (click)="openPopup(media)">
         <div class="SingleMediaWrapper" (click)="openPopup(media)">
           <img mat-card-image class="Media-Image" src="{{media.imageUrl}}">
@@ -32,8 +33,10 @@
           </mat-card-content>
         </div>
       </mat-card>
+      </div>
     </mat-tab>
     <mat-tab label="Watched">
+      <div class="MovieCont">
       <mat-card class="SingleMediaContainer" *ngFor="let media of this.watchedMediaFound" (click)="openPopup(media)">
         <div class="SingleMediaWrapper" (click)="openPopup(media)">
           <img mat-card-image class="Media-Image" src="{{media.imageUrl}}">
@@ -44,6 +47,7 @@
           </mat-card-content>
         </div>
       </mat-card>
+      </div>
     </mat-tab>
   </mat-tab-group>
 
