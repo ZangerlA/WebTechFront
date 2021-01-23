@@ -24,7 +24,7 @@ export class ProfileEditService {
   }
 
   getProfil(): Observable<any> {
-    const getProfil = `${this.apiEndpoint}/users`;
+    const getProfil = `${this.apiEndpoint}/users/self`;
     return this.http.get(getProfil, this.options);
   }
 
