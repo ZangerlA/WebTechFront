@@ -2,7 +2,7 @@
 
   <mat-toolbar id="toolbar-movie">
     <button mat-raised-button color="primary" id="addNew" (click)="goToAddMedia()">Add a new Media!</button>
-    <form [formGroup]="searchForm" id="searchbar">
+    <form [formGroup]="searchForm" id="searchbar" (input)="foundMedia(searchForm.value)">
       <div id="formFieldContainer">
       <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>Search...</mat-label>
@@ -12,17 +12,17 @@
     </form>
   </mat-toolbar>
 
-  <mat-card class="SingleMediaContainer" *ngFor="let movie of this.movies" >
-    <div class="SingleMediaWrapper" (click)="openPopup(movie)">
-      <img mat-card-image class="Media-Image" src="{{movie.imageUrl}}">
+  <mat-card class="SingleMediaContainer" *ngFor="let found of this.found" >
+    <div class="SingleMediaWrapper" (click)="openPopup(found)">
+      <img mat-card-image class="Media-Image" src="{{found.imageUrl}}">
       <span class="spacer"></span>
       <mat-card-content class="Media-Title-Container">
-        <p id="title">{{movie.title}}</p>
-        <p id="points">{{movie.mediaScore}}/10</p>
+        <p id="title">{{found.title}}</p>
+        <p id="points">{{found.mediaScore}}/10</p>
       </mat-card-content>
     </div>
     <mat-card-footer>
-      <button mat-raised-button color="primary" (click)="addToWatchlist(movie.id)">Add to Watchlist</button>
+      <button mat-raised-button color="primary" (click)="addToWatchlist(found.id)">Add to Watchlist</button>
     </mat-card-footer>
   </mat-card>
 </div>

@@ -41,5 +41,4 @@ export class ReviewService {
     const deleteReview = `${this.apiEndpoint}/review/${id}`;
     return this.http.delete(deleteReview, this.options);
   }
-
 }

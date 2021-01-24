@@ -16,6 +16,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 export class HomeMoviesComponent implements OnInit {
   movies: Media[] = [];
   searchForm: FormGroup;
+  found: Media[] = [];
 
   constructor(
     public fb: FormBuilder,
@@ -36,7 +37,7 @@ export class HomeMoviesComponent implements OnInit {
 
   fillContent(): void {
     this.mediaService.getMedia(undefined, 'Movie').subscribe(
-      res => {this.movies = res.body; },
+      res => {this.movies = res.body; this.found = res.body },
       error => {}
     );
   }
@@ -54,5 +55,9 @@ export class HomeMoviesComponent implements OnInit {
     this.snackBar.open('Success!', 'dismiss', {
       duration: 2000, panelClass: ['mat-toolbar', 'mat-primary', 'custom-dialog-container']
     });
+  }
+
+  foundMedia(MediaName: string): void{
+    this.found = this.movies.filter(media => media.title.toLowerCase().includes(MediaName.search.toString().toLowerCase()));
   }
 }
