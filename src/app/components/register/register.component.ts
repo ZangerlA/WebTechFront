@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
   errorMatcher = new CrossFieldErrorMatcher();
   registerError: string;
 
-  constructor(private authService: AuthService, public fb: FormBuilder, public router: Router) {
+  constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) {
     this.registerForm = this.fb.group({
       username: [''],
       contact_email: [''],

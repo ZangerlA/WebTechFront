@@ -10,11 +10,14 @@ import { Review } from "../models/review.model";
 })
 export class ReviewService {
 
-  apiEndpoint = environment.API_URL;
-  headers = new HttpHeaders();
-  options: {};
+  private apiEndpoint: string = environment.API_URL;
+  private headers: HttpHeaders = new HttpHeaders();
+  private options: {};
 
-  constructor(private http: HttpClient, public router: Router) {
+  constructor(
+    private http: HttpClient,
+    private router: Router
+  ) {
     this.headers.set('Content-Type', 'application/json');
     this.options = {
       headers: this.headers,

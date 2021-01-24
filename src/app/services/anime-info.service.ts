@@ -9,11 +9,14 @@ import {map} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AnimeInfoService {
-  apiEndpoint = 'https://api.jikan.moe/v3';
-  headers = new HttpHeaders();
-  options: {};
+  private apiEndpoint = 'https://api.jikan.moe/v3';
+  private headers: HttpHeaders = new HttpHeaders();
+  private options: {};
 
-  constructor(private http: HttpClient, public router: Router) {
+  constructor(
+    private http: HttpClient,
+    private router: Router
+  ) {
     this.headers.set('Content-Type', 'application/json');
     this.options = {
       headers: this.headers,

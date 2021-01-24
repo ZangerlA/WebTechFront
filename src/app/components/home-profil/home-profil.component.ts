@@ -19,7 +19,11 @@ export class HomeProfilComponent implements OnInit {
 
 
 
-  constructor(private authService: AuthService, public fb: FormBuilder, public router: Router, public profileEditService: ProfileEditService, public snackBar: MatSnackBar) {
+  constructor(private authService: AuthService,
+              private fb: FormBuilder,
+              private router: Router,
+              private profileEditService: ProfileEditService,
+              private snackBar: MatSnackBar) {
     this.editProfil = this.fb.group({
       username: [''],
       user_email: [''],
