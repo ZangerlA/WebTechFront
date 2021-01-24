@@ -97,6 +97,10 @@ mat-card-footer button{
     font-size: 0.50em;
   }
 
+  .MovieCont{
+    padding-bottom: 7vh;
+  }
+
 
 }
 
