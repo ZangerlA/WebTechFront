@@ -17,7 +17,10 @@ export class MediaSinglePopupComponent implements OnInit {
   ownReview: Review;
   reviewForm: FormGroup;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public mediainc: Media, private reviewService: ReviewService, public fb: FormBuilder, private snackBar: MatSnackBar) {
+  constructor(@Inject(MAT_DIALOG_DATA) private mediainc: Media,
+              private reviewService: ReviewService,
+              private fb: FormBuilder,
+              private snackBar: MatSnackBar) {
     this.media = mediainc;
     this.reviewForm = this.fb.group({
       reviewPoints: [''],

@@ -18,11 +18,11 @@ export class HomeMoviesComponent implements OnInit {
   searchForm: FormGroup;
 
   constructor(
-    public fb: FormBuilder,
+    private fb: FormBuilder,
     private router: Router,
     private mediaService: MediaService,
-    public popup: MatDialog,
-    public watchlistService: WatchlistService,
+    private popup: MatDialog,
+    private watchlistService: WatchlistService,
     private snackBar: MatSnackBar)
   {
     this.searchForm = this.fb.group({

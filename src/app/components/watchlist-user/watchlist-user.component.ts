@@ -1,9 +1,9 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import { WatchlistService } from '../../services/watchlist.service';
 import { MediaService } from '../../services/media.service';
-import {Media} from "../../models/media.model";
-import {MediaSinglePopupComponent} from "../media-single-popup/media-single-popup.component";
-import {MatDialog} from "@angular/material/dialog";
+import {Media} from '../../models/media.model';
+import {MediaSinglePopupComponent} from '../media-single-popup/media-single-popup.component';
+import {MatDialog} from '@angular/material/dialog';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
@@ -15,7 +15,12 @@ export class WatchlistUserComponent implements OnInit {
   wantToWatchListMedia: Media[] = [];
   watchedListMedia: Media[] = [];
 
-  constructor(public watchListService: WatchlistService, public mediaService: MediaService, public popup: MatDialog, private snackBar: MatSnackBar) { }
+  constructor(
+    private watchListService: WatchlistService,
+    private mediaService: MediaService,
+    private popup: MatDialog,
+    private snackBar: MatSnackBar
+  ) { }
 
   ngOnInit(): void {
     this.getWatchlist();

@@ -12,7 +12,7 @@ import {Router} from '@angular/router';
 export class NavbarHeaderComponent implements OnInit {
   toggleIn: boolean;
 
-  constructor(private toggleService: ToggleService, private authService: AuthService, public router: Router) { }
+  constructor(private toggleService: ToggleService, private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.toggleService.toggleThings.subscribe(tog => this.toggleIn = tog);

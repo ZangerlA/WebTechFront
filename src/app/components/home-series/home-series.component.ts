@@ -19,10 +19,10 @@ export class HomeSeriesComponent implements OnInit {
   searchForm: FormGroup;
 
   constructor(
-    public fb: FormBuilder,
+    private fb: FormBuilder,
     private router: Router,
     private mediaService: MediaService,
-    public popup: MatDialog,
+    private popup: MatDialog,
     private watchlistService: WatchlistService,
     private snackBar: MatSnackBar)
   {

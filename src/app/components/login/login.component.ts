@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   loginError: string;
 
-  constructor(private authService: AuthService, public fb: FormBuilder, public router: Router) {
+  constructor(private authService: AuthService, private fb: FormBuilder, private router: Router) {
     this.loginForm = this.fb.group({
       username: [''],
       password: ['']

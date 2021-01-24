@@ -10,11 +10,14 @@ import {SeriesRespone} from '../models/seriesDto';
   providedIn: 'root'
 })
 export class MovieSeriesInfoService {
-  apiEndpoint = 'https://www.omdbapi.com/?apikey=5fe93688&';
-  headers = new HttpHeaders();
-  options: {};
+  private apiEndpoint: string = 'https://www.omdbapi.com/?apikey=5fe93688&';
+  private headers: HttpHeaders = new HttpHeaders();
+  private options: {};
 
-  constructor(private http: HttpClient, public router: Router) {
+  constructor(
+    private http: HttpClient,
+    private router: Router
+  ) {
     this.headers.set('Content-Type', 'application/json');
     this.options = {
       headers: this.headers,

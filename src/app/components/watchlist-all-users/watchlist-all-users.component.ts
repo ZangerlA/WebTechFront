@@ -17,12 +17,16 @@ export class WatchlistAllUsersComponent implements OnInit {
   wantToWatchListsFound: any [];
   WantToWatchMediaFound: any[] = [];
   WantToWatchUsersFound: any[] = [];
-
   watchedListsFound: any [];
   watchedMediaFound: any[] = [];
   watchedUsersFound: any[] = [];
 
-  constructor(public watchlistService: WatchlistService, public mediaService: MediaService, public popup: MatDialog, private fb: FormBuilder) {
+  constructor(
+    private watchlistService: WatchlistService,
+    private mediaService: MediaService,
+    private popup: MatDialog,
+    private fb: FormBuilder
+  ) {
     this.searchUserWatchlist = this.fb.group({
       user: ['']
     });

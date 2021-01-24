@@ -56,8 +56,7 @@ const routes: Routes = [
         { path: 'UserWatchlists', component: WatchlistAllUsersComponent, canActivate: [AuthGuard]}
       ]},
     { path: 'login', component: LoginComponent },
-    { path: 'register', component: RegisterComponent },
-    { path: 'nav', component: NavbarBodyComponent }
+    { path: 'register', component: RegisterComponent }
   ];
 
 // @ts-ignore
