@@ -12,21 +12,27 @@
   text-align: center;
   font-weight: bold;
 }
+
 mat-dialog-content{
   display: flex;
   flex-direction: row;
   height: 90%;
 }
+
 .contentContainer{
   width: 35%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
   margin-right: 5px;
+
 }
 .imgContainer{
   display: flex;
   align-content: center;
   justify-content: center;
   margin-right: 5px;
+  margin-bottom: 5px;
 
 }
 .imgContainer img{
@@ -38,14 +44,30 @@ mat-dialog-content{
   width: 80%;
   display: flex;
   flex-direction: column;
+
+}
+
+::-webkit-scrollbar{
+  width: 3px;
+  background: darkgray;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #292929;
+  border-radius: 5px;
 }
 
 #MediaReviews{
+  overflow-y: scroll;
+}
 
+.descContainer{
+  overflow-y: scroll;
 }
 
 .writeReviewContainer{
   background-color:#403f3f;
+  padding-left: 10px;
 }
 
 li{
@@ -90,15 +112,14 @@ cite{
   mat-dialog-content{
     flex-direction: column;
     height: 90%;
+    margin-bottom: 5px;
   }
-  .contentContainer, .ReviewContainer{
+  .contentContainer, .ReviewContainer, .headerContainer{
     width: 75%;
+    height: auto;
   }
   .imgContainer{
     display: none;
-  }
-  .headerContainer{
-    width: 75%;
   }
 
   .writeReviewContainer{
@@ -107,5 +128,12 @@ cite{
 
   .contentContainer{
     margin-bottom: 20%;
+  }
+  #MediaReviews{
+    overflow-y: auto;
+  }
+
+  .descContainer{
+    overflow-y: auto;
   }
 }
