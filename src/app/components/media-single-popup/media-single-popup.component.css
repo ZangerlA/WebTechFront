@@ -90,9 +90,11 @@ cite{
   mat-dialog-content{
     flex-direction: column;
     height: 90%;
+    margin-bottom: 6px;
   }
   .contentContainer, .ReviewContainer{
     width: 75%;
+    height: auto;
   }
   .imgContainer{
     display: none;
