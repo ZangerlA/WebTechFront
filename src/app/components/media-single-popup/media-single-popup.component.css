@@ -112,8 +112,9 @@ cite{
   mat-dialog-content{
     flex-direction: column;
     height: 90%;
-    margin-bottom: 5px;
+    margin-bottom: 6px;
   }
+
   .contentContainer, .ReviewContainer, .headerContainer{
     width: 75%;
     height: auto;

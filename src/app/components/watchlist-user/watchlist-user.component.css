@@ -41,7 +41,13 @@ Tab Display
 }
 
 .title{
-  font-size: 1vw;
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+
+.points{
+  font-size: 1.2em;
+  font-weight: bolder;
 }
 
 mat-card-footer{
