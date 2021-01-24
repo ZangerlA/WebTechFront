@@ -56,29 +56,4 @@ export class AuthService{
       }
     );
   }
-
-  // Get User Data
-  getUserProfile(id): Observable<any> {
-    const getUser = `${this.apiEndpoint}/users/${id}`;
-    return this.http.get(getUser, this.options).pipe(
-      map((res: Response) => {
-        return res || {};
-      }),
-      catchError(this.handleError)
-    );
-  }
-
-  // Error
-  // TODO keep or no keep ?
-  handleError(error: HttpErrorResponse): Observable<never>{
-    let msg;
-    if (error.error instanceof ErrorEvent) {
-      // client-side error
-      msg = error.error.message;
-    } else {
-      // server-side error
-      msg = `${error.error.message}`;
-    }
-    return throwError(msg);
-  }
 }

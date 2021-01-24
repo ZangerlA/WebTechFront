@@ -58,11 +58,13 @@
 }
 
 #title{
-  font-size: 1vw;
+  font-size: 1.5em;
+  font-weight: bolder;
 }
 
 #points{
-
+  font-size: 1.2em;
+  font-weight: bolder;
 }
 
 mat-card-footer{
@@ -82,6 +84,23 @@ mat-card-footer button{
 @media only screen and (max-width: 700px){
   .SingleMediaContainer{
     width: 34vw;
+    margin-bottom: 10px;
   }
+  #searchbar{
+    margin-left: 8px;
+
+  }
+  #formFieldContainer{
+    font-size: 15px;
+    width: 20vw;
+  }
+  #addNew{
+    font-size: 0.50em;
+  }
+
+  .MovieCont{
+    padding-bottom: 7vh;
+  }
+
 }
 
