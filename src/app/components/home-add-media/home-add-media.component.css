@@ -1,5 +1,4 @@
 .MovieCont{
-
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
@@ -12,6 +11,7 @@
   top: 0;
   z-index: 1000;
 }
+
 
 ::ng-deep .mat-option *{
   color: white;
@@ -31,7 +31,7 @@
 }
 
 #searchbar {
-  margin: 2vh auto 0vh auto;
+  margin: 0.7vh auto 0vh auto;
 }
 
 #searchbar mat-form-field{
@@ -39,7 +39,7 @@
 }
 
 #searchButton{
-  height: 4.5vh;
+  height: 4vh;
 }
 
 #addNew{

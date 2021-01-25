@@ -17,7 +17,8 @@
 }
 
 #searchbar{
-  margin: 2vh auto 0vh auto;
+  margin: 0.7vh auto 0vh auto;
+
 }
 
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline{

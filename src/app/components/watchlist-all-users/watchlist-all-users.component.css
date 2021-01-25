@@ -30,7 +30,7 @@
 }
 
 #searchbar {
-  margin: 2vh auto 0vh auto;
+  margin: 0.7vh auto 0vh auto;
 
 }
 
@@ -52,7 +52,7 @@ Tab Display
 }
 
 #searchButton{
-  height: 4.5vh;
+  height: 4vh;
   margin-left: 1vw;
 }
 
