@@ -17,6 +17,7 @@ export class HomeAnimesComponent implements OnInit {
 
   animes: Media[] = [];
   searchForm: FormGroup;
+  found: Media[] = [];
 
   constructor(
     private fb: FormBuilder,
@@ -37,7 +38,7 @@ export class HomeAnimesComponent implements OnInit {
 
   fillContent(): void {
     this.mediaService.getMedia(undefined, 'Anime').subscribe(
-      res => {this.animes = res.body; },
+      res => {this.animes = res.body; this.found = res.body},
       error => {}
     );
   }
@@ -57,4 +58,7 @@ export class HomeAnimesComponent implements OnInit {
     });
   }
 
+  foundMedia(MediaName: string): void{
+    this.found = this.animes.filter(media => media.title.toLowerCase().includes(MediaName.search.toString().toLowerCase()));
+  }
 }

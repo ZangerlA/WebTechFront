@@ -17,6 +17,7 @@ export class HomeSeriesComponent implements OnInit {
 
   series: Media[] = [];
   searchForm: FormGroup;
+  found: Media[] = [];
 
   constructor(
     private fb: FormBuilder,
@@ -37,7 +38,7 @@ export class HomeSeriesComponent implements OnInit {
 
   fillContent(): void {
     this.mediaService.getMedia(undefined, 'Series').subscribe(
-      res => {this.series = res.body; },
+      res => {this.series = res.body; this.found = res.body},
       error => {}
     );
   }
@@ -57,4 +58,7 @@ export class HomeSeriesComponent implements OnInit {
     });
   }
 
+  foundMedia(MediaName: string): void{
+    this.found = this.series.filter(media => media.title.toLowerCase().includes(MediaName.search.toString().toLowerCase()));
+  }
 }

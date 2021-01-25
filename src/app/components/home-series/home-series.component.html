@@ -2,7 +2,7 @@
 
   <mat-toolbar id="toolbar-movie">
     <button mat-raised-button color="primary" id="addNew" (click)="goToAddMedia()">Add a new Media!</button>
-    <form [formGroup]="searchForm" id="searchbar">
+    <form [formGroup]="searchForm" id="searchbar" (input)="foundMedia(searchForm.value)">
       <div id="formFieldContainer">
         <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>Search...</mat-label>
@@ -12,17 +12,17 @@
     </form>
   </mat-toolbar>
 
-  <mat-card class="SingleMediaContainer" *ngFor="let serie of this.series">
-    <div class="SingleMediaWrapper" (click)="openPopup(serie)">
-      <img mat-card-image class="Media-Image" src="{{serie.imageUrl}}">
+  <mat-card class="SingleMediaContainer" *ngFor="let media of this.found">
+    <div class="SingleMediaWrapper" (click)="openPopup(media)">
+      <img mat-card-image class="Media-Image" src="{{media.imageUrl}}">
       <span class="spacer"></span>
       <mat-card-content class="Media-Title-Container">
-        <p id="title">{{serie.title}}</p>
-        <p id="points">{{serie.mediaScore}}/10</p>
+        <p id="title">{{media.title}}</p>
+        <p id="points">{{media.mediaScore}}/10</p>
       </mat-card-content>
     </div>
     <mat-card-footer>
-      <button mat-raised-button color="primary" (click)="addToWatchlist(serie.id)">Add to Watchlist</button>
+      <button mat-raised-button color="primary" (click)="addToWatchlist(media.id)">Add to Watchlist</button>
     </mat-card-footer>
   </mat-card>
 
