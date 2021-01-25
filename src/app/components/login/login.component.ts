@@ -29,9 +29,11 @@ export class LoginComponent implements OnInit {
       this.authService.signIn(val).subscribe(
         loginJson => {
             this.router.navigate(['']);
-          });
+          },
+          error => this.loginError = error.error.message);
     }
   }
+
   createAccount(): void{
     this.router.navigate(['/register']);
   }

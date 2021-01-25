@@ -16,6 +16,10 @@ mat-card{
   color: white;
 }
 
+mat-card-subtitle{
+  color: #b11010;
+}
+
 ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline{
   color: white;
 }
