@@ -56,9 +56,11 @@
   display: flex;
   flex-direction: column;
 }
+
 .Media-Image {
 
 }
+
 .Media-Title-Container{
   display: flex;
   justify-content: space-between;
