@@ -83,8 +83,13 @@
 
   #searchbar{
     margin-left: 8px;
-
+    margin-top: 11px;
   }
+
+  #searchButton{
+    height: 5.5vh;
+  }
+
   #formFieldsContainer{
     font-size: 13px;
     width: 15vw;
